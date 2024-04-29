@@ -1,0 +1,41 @@
+<footer>
+   <h1>Footer</h1>
+</footer>
+<script>
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+         }
+      });
+   });
+
+   const hiddenElements = document.querySelectorAll(".hidden");
+   hiddenElements.forEach((el) => observer.observe(el));
+
+   // error message showing
+
+   //page loader
+   window.addEventListener("load", () => {
+      document.querySelector("#js-preloader").classList.add("loaded");
+   });
+
+   //sticky navbar
+   window.addEventListener("scroll", (e) => {
+      if (window.scrollY >= 80) {
+         document.querySelector("header nav").classList.add("back");
+      } else if (window.scrollY < 80) {
+         document.querySelector("header nav").classList.remove("back");
+      }
+   });
+
+   const showSecNav = document.querySelector(".respNavImg");
+
+   showSecNav.addEventListener("click", () => {
+      document.querySelector(".secNav").style.display = "block";
+   });
+
+   document.querySelector(".close").addEventListener("click", () => {
+      document.querySelector(".secNav").style.display = "none";
+   });
+</script>

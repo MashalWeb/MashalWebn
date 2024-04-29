@@ -1,0 +1,453 @@
+.notesMainDev {
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jsAddText {
+    padding: 8px 100px;
+}
+
+@media only screen and (max-width: 720px) {
+    .jsAddText {
+        padding: 7px 10px;
+    }
+}
+
+.mainNotesSec {
+    padding: 30px 20px;
+    padding-top: 40px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0 5px;
+    flex-wrap: wrap;
+}
+
+.notesright {
+    width: 420px;
+}
+
+.notesright img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 15px #ffa57496);
+}
+
+.mainNotesSec .notesleft {
+    flex-basis: 50%;
+}
+
+.mainNotesSec .notesleft h1 {
+    font-size: 37px;
+    font-weight: 550;
+    line-height: 37px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.mainNotesSec .notesleft h1::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 20%;
+    height: 6px;
+    background: #ffa574;
+    border-radius: 20px;
+}
+
+.mainNotesSec .notesleft h1 span {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mainNotesSec .notesleft p {
+    font-size: 17px;
+    line-height: 23px;
+}
+
+@media only screen and (max-width: 890px) {
+    .mainNotesSec {
+        padding: 30px 10px;
+        gap: 15px 0;
+    }
+
+    .mainNotesSec .notesleft {
+        flex-basis: 90%;
+    }
+
+    .mainNotesSec .notesleft h1 {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 467px) {
+    .mainNotesSec .notesleft {
+        flex-basis: 100%;
+    }
+
+    .mainNotesSec .notesleft h1 {
+        margin-top: 14px;
+        font-size: 28px;
+        line-height: 34px;
+        padding-bottom: 6px;
+    }
+
+    .mainNotesSec .notesleft p {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .notesright {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 467px) {
+    .mainNotesSec .notesleft p {
+        font-size: 15.5px;
+        line-height: 23px;
+        text-align: start;
+    }
+}
+
+.boxSecs a {
+    text-decoration: none;
+}
+
+.boxSecs {
+    display: flex;
+    gap: 0 30px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.boxSecs .noteBox {
+    cursor: pointer;
+    width: 250px;
+    height: 180px;
+    box-shadow: 0 4px 10px 4px rgba(255, 153, 58, 0.192);
+    display: flex;
+    margin: 8px 0;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.boxSecs .noteBox:hover {
+    box-shadow: 0 4px 10px 4px rgba(255, 153, 58, 0.452);
+}
+
+.boxSecs .noteBox:active {
+    scale: 0.9;
+}
+
+.boxSecs .noteBox h3 {
+    font-weight: 700;
+    margin: 5px 0;
+    transition: 0.5s ease;
+    color: #000000;
+    font-size: 21px;
+}
+
+.boxSecs .noteBox h3 span {
+    color: #ff8543;
+}
+
+.boxSecs .noteBox i {
+    color: #ff5900;
+    font-size: 100px;
+}
+
+@media only screen and (max-width: 546px) {
+    .boxSecs {
+        gap: 0 15px;
+    }
+
+    .boxSecs .noteBox {
+        width: 360px;
+        height: 150px;
+        padding: 10px;
+    }
+
+    .boxSecs .noteBox i {
+        font-size: 19px;
+    }
+
+    .boxSecs .noteBox i {
+        color: #ff5900;
+        font-size: 70px;
+    }
+}
+
+@media only screen and (max-width: 422px) {
+    .boxSecs {
+        gap: 0 0;
+    }
+
+    .boxSecs .noteBox {
+        width: 330px;
+        height: 130px;
+    }
+
+    .boxSecs .noteBox i {
+        color: #ff5900;
+        font-size: 50px;
+    }
+
+    .boxSecs .noteBox h3 {
+        font-size: 18px;
+    }
+
+    .jsAddText {
+        padding: 7px 8px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+.subjectSec {
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    display: flex;
+    gap: 0 5px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.subjectSec .mainContent {
+    padding: 20px 10px;
+    flex-basis: 64%;
+    border-radius: 5px;
+}
+
+.subjectSec .mainContent .subjectText h1 {
+    font-weight: 700;
+    font-size: 27px;
+    padding-bottom: 5px;
+}
+
+.subjectSec .mainContent .subjectText h1 span {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.subjectSec .mainContent .subjectText p {
+    line-height: 21px;
+    font-size: 16.5px;
+    text-align: start;
+}
+
+.subjectSec .mainContent .subjectSelect {
+    margin-top: 10px;
+}
+
+.subjectSec .mainContent .subjectSelect h2 {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.subjectSec .mainContent .subjectSelect .subjectBoxs {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 18px 12px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.subjectBoxs .sinSubBox {
+    background: #fff;
+    padding: 5px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.055);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subjectBoxs .sinSubBox:hover {
+    box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.144);
+}
+
+.subjectBoxs .sinSubBox:active {
+    scale: 0.9;
+}
+
+.subjectBoxs .sinSubBox h4 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.subjectBoxs .sinSubBox img {
+    width: 120px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 4px #00000013);
+}
+
+.down {
+    margin-top: 15px;
+}
+
+.subjectSec .subjectSidebar {
+    padding: 10px 25px;
+    width: 370px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px 4px rgba(0, 0, 0, 0.084);
+    height: fit-content;
+}
+
+.subjectSidebar .sidepart h3 {
+    text-align: center;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #00000013;
+    padding-bottom: 7px;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 21px;
+}
+
+.subjectSidebar .sidepart .pagesdiv a {
+    text-decoration: none;
+}
+
+.subjectSidebar .sidepart .pagesdiv a h4 {
+    color: #424242;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.subjectSidebar .sidepart .pagesdiv a h4:hover {
+    color: #000;
+}
+
+.subjectSidebar .sidepart .linksDiv a {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    margin: 7px 0;
+    text-decoration: none;
+}
+
+.subjectSidebar .sidepart .linksDiv a i {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+}
+
+.subjectSidebar .sidepart .linksDiv a h4 {
+    color: #424242;
+    transition: 0.3s;
+}
+
+.subjectSidebar .sidepart .linksDiv a h4:hover {
+    color: #000;
+}
+
+@media only screen and (max-width: 1081px) {
+    .subjectSec {
+        gap: 30px 0;
+    }
+
+    .subjectSec .mainContent {
+        flex-basis: 99%;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .subjectSec {
+        padding: 5px 8px;
+        justify-content: center;
+    }
+
+    .subjectSec .mainContent {
+        padding: 20px 0;
+    }
+
+    .subjectSec .mainContent .subjectSelect .subjectBoxs {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .subjectBoxs .sinSubBox {
+        padding: 5px 0;
+        width: 180px;
+    }
+
+    .subjectBoxs .sinSubBox img {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    .subjectSec .mainContent {
+        flex-basis: 100%;
+    }
+
+    .subjectSec .mainContent .subjectText h1 {
+        line-height: 28px;
+        font-size: 25px;
+    }
+
+    .subjectBoxs .sinSubBox {
+        padding: 5px 0;
+        width: 160px;
+    }
+
+    .subjectSec .mainContent .subjectText p {
+        font-size: 15px;
+    }
+
+    .subjectSec .subjectSidebar {
+        padding: 10px 15px;
+    }
+}
+
+.cs button {
+    margin-top: 10px;
+    padding: 9px 30px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #fda97b, #bb37bb);
+    outline: none;
+    border: none;
+    font-weight: 450;
+    color: #fff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.089);
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 10px 4px rgba(255, 135, 80, 0.253);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cs button:active {
+    transform: scale(0.9);
+}
+
+.subjectBoxs a {
+    text-decoration: none;
+    color: #000;
+}

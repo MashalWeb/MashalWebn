@@ -1,0 +1,253 @@
+.login-reg {
+    padding: 10px 17px;
+    background: #ff9257;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    box-shadow: 0 3px 5px 4px rgba(168, 168, 168, 0.068);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.13);
+    font-size: 15.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-reg:active {
+    scale: 0.9;
+}
+
+.fromSec {
+    display: flex;
+    width: 100%;
+    padding: 10px 15px;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.fromSec form {
+    background: linear-gradient(45deg, #fc9b669f, #bb37bb50);
+    flex-basis: 44%;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px 3px #00000017;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 7px;
+}
+
+form button {
+    width: 80%;
+    margin-top: 13px;
+    padding: 10px 6px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 3px 4px 4px #fc9b6628;
+    transition: 0.3s ease;
+    color: #ffffff;
+    background: linear-gradient(45deg,
+            #BB37BB,
+            #fda97b);
+    font-size: 17px;
+    text-shadow: 0px 1px 2px #0000008c;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: linear-gradient(45deg,
+            #fda97b, #BB37BB);
+}
+
+form {
+    overflow: hidden;
+}
+
+.fromSec form h2 {
+    color: #000;
+    padding-bottom: 5px;
+    font-weight: 550;
+    font-size: 28px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 2px 0;
+    width: 370px;
+    padding: 2px 4px;
+}
+
+.inputs label {
+    color: #1a1a1a;
+    font-size: 15px;
+}
+
+.inputs input {
+    background: #ffffffef;
+    border: none;
+    outline: none;
+    padding: 10px 3px;
+    border-radius: 5px;
+    font-size: 14.8px;
+    padding-left: 5px;
+    color: #000000;
+    transition: 0.3s ease;
+    border: 0.5px solid #ffffff1a;
+}
+
+.inputs input::placeholder {
+    color: #1a1a1a;
+}
+
+.inputs input:focus {
+    background: #ffffffdc;
+    border: 0.5px solid #fa7b36;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.075);
+}
+
+.form-img {
+    width: 350px;
+}
+
+.forgotPass {
+    margin-top: 5px;
+    width: 355px;
+}
+
+.forgotPass a {
+    color: #582eff;
+    text-decoration: none;
+}
+
+.forgotPass a:hover {
+    color: #353535;
+    text-decoration: underline;
+}
+
+.login {
+    margin-top: 10px;
+    color: #000;
+}
+
+.login a {
+    text-decoration: none;
+    color: #582eff;
+}
+
+.form-img img {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 916px) {
+    .form-img {
+        width: 300px;
+    }
+
+    .fromSec {
+        padding: 10px;
+    }
+
+    .inputs {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 839px) {
+    .fromSec {
+        flex-direction: column;
+    }
+
+    .fromSec form {
+        width: 80%;
+    }
+
+    .inputs {
+        width: 95%;
+    }
+
+    .form-img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .fromSec form {
+        width: 97%;
+    }
+
+    .inputs {
+        width: 98%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .fromSec form {
+        width: 99%;
+    }
+
+    .inputs {
+        width: 100%;
+    }
+
+    .inputs label {
+        font-size: 14px;
+    }
+
+    .inputs input {
+        padding: 8px;
+        padding-left: 5px;
+        font-size: 14px;
+    }
+
+    .forgotPass {
+        width: 96%;
+    }
+}
+
+.inputs small {
+    opacity: 0.7;
+    margin-left: 3px;
+    margin-bottom: -16px;
+}
+
+.e {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 999;
+    margin-top: -40px;
+    animation: ErrorShow 0.5s linear 0s 1;
+}
+
+.e .errors {
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.486);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.205);
+}
+
+@keyframes ErrorShow {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/profile.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+      <section class="profileMain">
+         <div class="sideBar" id="side">
+            <button class="toggleSideBar">
+               <i class="ri-arrow-right-line"></i>
+            </button>
+            <div class="sidebaritems">
+               <a href="/profile" class="sidebarElem">
+                  <i class="ri-account-box-fill"></i>
+                  <h5>Profile</h5>
+               </a>
+               <a href="#" class="sidebarElem">
+                  <i class="ri-news-fill"></i>
+                  <h5>Posts</h5>
+               </a>
+               <a href="/logout" class="sidebarElem">
+                  <i class="ri-logout-circle-line"></i>
+                  <h5>Logout</h5>
+               </a>
+            </div>
+         </div>
+         <div class="PerDets">
+            <div class="profileCard">
+               <div class="profileImg">
+                  <img src="/images/uploads/<%= userd.avatar %>" alt="" />
+               </div>
+               <div class="ProMoreDets">
+                  <h1><%= userd.username %></h1>
+               </div>
+               <div class="ProMoreDets">
+                  <h3><%= userd.email %></h3>
+               </div>
+               <div class="ProMoreDets">
+                  <h3>Role : <%= userd.role %></h3>
+               </div>
+               <div class="ProMoreDets cen">
+                  <a href="/profileEdit">
+                     <button>Edit Profile</button>
+                  </a>
+               </div>
+            </div>
+            <div class="otherDets">
+               <div class="bioDets" style="width: 100%">
+                  <div class="bioSec">
+                     <h3>About Me</h3>
+                     <div class="biocontent ext">
+                        <p><%= userd.bio %></p>
+                     </div>
+                  </div>
+                  <div class="bioSec dis sec" style="padding: 10px">
+                     <h3 style="text-align: center">Menu</h3>
+                     <div class="secondSide">
+                        <a href="/profile" class="sidebarElem">
+                           <i class="ri-account-box-fill"></i>
+                           <h5>Profile</h5>
+                        </a>
+                        <a href="#" class="sidebarElem">
+                           <i class="ri-news-fill"></i>
+                           <h5>Posts</h5>
+                        </a>
+                        <a href="/logout" class="sidebarElem">
+                           <i class="ri-logout-circle-line"></i>
+                           <h5>Logout</h5>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="bioSec dis" style="padding: 10px 15px">
+                     <h3>Discover Our Pages</h3>
+                     <a href="/notes">
+                        <h4>Matric & FAC Classes Notes</h4>
+                     </a>
+                     <a href="/notes">
+                        <h4>Matric & FAC Past Year Papers</h4>
+                     </a>
+                     <a href="/notes">
+                        <h4>View All Posts</h4>
+                     </a>
+                  </div>
+               </div>
+               <div class="CreatePostBtn">
+                  <a href="/">
+                     <button>Back To Home</button>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <script>
+         let ff = 1;
+         document
+            .querySelector(".toggleSideBar")
+            .addEventListener("click", (e) => {
+               console.log("click");
+
+               if (ff === 1) {
+                  document.getElementById("side").style.width = "140px";
+                  document.querySelector(
+                     ".toggleSideBar"
+                  ).children[0].className = "ri-arrow-left-line";
+
+                  ff = 0;
+               } else {
+                  document.getElementById("side").style.width = "50px";
+                  document.querySelector(
+                     ".toggleSideBar"
+                  ).children[0].className = "ri-arrow-right-line";
+                  ff = 1;
+               }
+            });
+      </script>
+      <% include ./partials/footer.ejs %>
+   </body>
+</html>

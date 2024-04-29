@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/AllNotesCss.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+      <section class="notesMainDev" id="selectClass">
+         <div class="mainNotesSec">
+            <div class="notesleft">
+               <h1>Download All Classes <span>Chapter Wise Notes</span></h1>
+               <p>
+                  Looking for ninth to twelfth Class Khyber Pakhtunkhwa Board
+                  PDF Notes? Mashalweb provides high-quality given classes PDF
+                  Notes for all subjects, designed according to the latest
+                  syllabus. These notes can be easily downloaded or viewed
+                  online. Print them out for a hard copy.
+               </p>
+            </div>
+            <div class="notesright">
+               <img
+                  src="/images/NotesLeftImg.png"
+                  alt=""
+                  class="notesLeftImg"
+               />
+            </div>
+         </div>
+         <h2 style="margin: 20px 0; font-size: 34px; font-weight: 500">
+            Select Your Class
+         </h2>
+         <div class="boxSecs">
+            <a href="/Notes/KPK-Boards-Ninth-Class-Notes">
+               <div class="noteBox">
+                  <h3>Ninth Class<span>(9th)</span></h3>
+                  <i class="ri-file-text-fill"></i>
+               </div>
+            </a>
+            <a href="/Notes/KPK-Boards-Tenth-Class-Notes">
+               <div class="noteBox">
+                  <h3>Tenth Class<span>(10th)</span></h3>
+                  <i class="ri-file-text-fill"></i>
+               </div>
+            </a>
+            <a href="/Notes/KPK-Boards-Eleventh-Class-Notes">
+               <div class="noteBox">
+                  <h3>Eleventh Class<span>(11th)</span></h3>
+                  <i class="ri-file-text-fill"></i>
+               </div>
+            </a>
+            <a href="/Notes/KPK-Boards-Twelfth-Class-Notes">
+               <div class="noteBox">
+                  <h3>Twelfth Class<span>(12th)</span></h3>
+                  <i class="ri-file-text-fill"></i>
+               </div>
+            </a>
+         </div>
+         <div class="notesDesc" id="notesDesc"></div>
+      </section>
+      <% include ./partials/comments.ejs %>
+      <script>
+         let mainText5 =
+            "Solved Easy notes for ninth to twelfth class chapter-wise are freely available on MashalWeb for learning purposes. By studying to learn these notes you can easily get more than 80% Marks in each subject. If you are a teacher then you can also provide or suggest these KPK Board Notes to your students. If you are a student then you can also share these notes with your fellows for better and excellent achievement in final year exams Papers.";
+         let mainText2 =
+            "Prepare these notes for your Final Year Exams/Papers preparations and get higher marks. We offer notes for all Khyber Pakhtunkhwa Boards, including General Mathematics, Physics, Chemistry, Biology, Urdu, Pakistan studies, Computer Science, English Grammar, Islamite, and other Science or Arts Subjects. Available in PDF for Malakand all KPK Boards.";
+
+         let mainText4 =
+            "Prepare for your 9th to 12th class exams with ease by using our PDF notes. Our notes are designed with concise definitions and question-answer solutions. You can also practice by taking chapter MCQ quizzes that will help you learn short question answers, fill in the blanks, as well as VIVA or practice-related question answers.At MashalWeb, we provide easy steps for learning ninth to twelfth Class Notes. These important steps make it easy for you to learn question answers. You can solve and learn chapter-wise MCQ quizzes online and use the available PDFs on our website. If you find some questions difficult, practice them twice a day. Remember, MCQs are helpful for writing paragraphs or solving short questions. Combine your lecture notes with the topic headings and highlight them using different colors like red or green highlighters to easily remember difficult questions. You can also print out these notes for easy reference in the future. Writing these notes in a notebook will also help strengthen your learning process.We have different writers' notes of Given Class available on our website. Take advantage of our best online MCQ quizzes for practice of multiple-choice question answers, short and long question answers. We also have past papers available for students' exam and test preparations.";
+         function addContent(textContent, elementNameInString, uploadTarget) {
+            const elemet = document.createElement(`${elementNameInString}`);
+            elemet.className = "jsAddText";
+            elemet.innerHTML = `<p>${textContent}</p>`;
+            uploadTarget.appendChild(elemet);
+         }
+
+         const mainNotes = document.getElementById("notesDesc");
+
+         addContent(mainText2, "p", mainNotes);
+         addContent(mainText4, "p", mainNotes);
+         addContent(mainText5, "p", mainNotes);
+      </script>
+      <% include ./partials/footer.ejs %>
+   </body>
+</html>

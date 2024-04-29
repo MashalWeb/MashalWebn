@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/LoginReg.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %> <% if (locals.error) { %>
+      <div class="e">
+         <div class="errors">
+            <p><%= locals.error %></p>
+         </div>
+      </div>
+      <% } %>
+      <section class="fromSec" style="margin-top: 120px">
+         <div class="form-img">
+            <img src="images/FromImage.jpg" alt="" />
+         </div>
+         <form action="/login" method="post">
+            <h2>Login In Account</h2>
+            <div class="inputs">
+               <label for="email">Email Address</label>
+               <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="type your email.."
+                  required="required"
+               />
+            </div>
+            <div class="inputs">
+               <label for="password">Password</label>
+               <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="password.."
+                  required="required"
+               />
+            </div>
+            <div class="forgotPass">
+               <a href="#">forget Password ?</a>
+            </div>
+            <button type="submit">Login</button>
+            <p class="login">
+               Don't Have a Account <a href="/register">Register</a>
+            </p>
+         </form>
+      </section>
+      <% include ./partials/footer.ejs %>
+      <script>
+         document.querySelector(".e").addEventListener("click", function () {
+            this.style.display = "none";
+         });
+         setTimeout(() => {
+            document.querySelector(".e").style.display = "none";
+         }, 4000);
+      </script>
+   </body>
+</html>

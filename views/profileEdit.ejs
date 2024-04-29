@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/profile.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+      <section class="profile">
+         <div class="welMsg">
+            <h1>Welcome <span>Mr.<%= userData.logUser %></span></h1>
+            <h3 style="text-align: center">Edit Your Profile</h3>
+         </div>
+         <div class="form">
+            <div class="formLeft">
+               <form
+                  action="/upload"
+                  method="post"
+                  id="fileform"
+                  enctype="multipart/form-data"
+                  style="display: none"
+               >
+                  <input type="file" name="image" id="profileImage" hidden />
+               </form>
+
+               <div class="imageBox">
+                  <img
+                     class="w-full h-full object-cover"
+                     src="/images/uploads/<%= userData.avatar %>"
+                     alt=""
+                  />
+                  <div class="editIco">
+                     <i class="ri-edit-circle-fill"></i>
+                  </div>
+               </div>
+               <div class="inputfields">
+                  <input
+                     type="text"
+                     value="Name : <%= userData.logUser %>"
+                     disabled
+                  />
+               </div>
+               <div class="inputfields">
+                  <input
+                     type="email"
+                     value="Email : <%= userData.logEmail %>"
+                     disabled
+                  />
+               </div>
+            </div>
+            <form class="formRight" action="/updateDetails" method="post">
+               <div class="inputfields">
+                  <select name="role">
+                     <option value="Student">Student</option>
+                     <option value="Teacher">Teacher</option>
+                     <option value="individual">individual</option>
+                  </select>
+               </div>
+               <div class="inputfields">
+                  <textarea
+                     name="bio"
+                     id="bio"
+                     cols="30"
+                     rows="7"
+                     placeholder="Write About Yourself"
+                  >
+<%= userData.logBio %></textarea
+                  >
+               </div>
+               <div class="inputfields">
+                  <input
+                     type="submit"
+                     name=""
+                     id="updateDetails"
+                     value="Update Details"
+                  />
+               </div>
+            </form>
+         </div>
+      </section>
+      <script>
+         document.querySelector(".editIco").addEventListener("click", (e) => {
+            document.querySelector("#profileImage").click();
+         });
+         document
+            .querySelector("#profileImage")
+            .addEventListener("change", function () {
+               document.querySelector("#fileform").submit();
+            });
+      </script>
+   </body>
+</html>
+<% include ./partials/footer.ejs %>
