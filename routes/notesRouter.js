@@ -1,9 +1,7 @@
 const commentModel = require("../models/comments.model");
-const userModel = require("../models/user.model");
 const { Router } = require("express");
 const router = Router();
-
-
+const NotesData = require("./Data");
 router.get("/KPK-Boards-Ninth-Class-Notes", async function (req, res) {
    const comments = await commentModel.find({}).populate("commentBy");
    const user = req.user;
@@ -44,12 +42,45 @@ router.get("/KPK-Boards-Twelfth-Class-Notes", async function (req, res) {
 //it show data according to the dynamic value in url /:subject
 router.get("/KPK-Boards-Ninth-Class-Notes/:subject", async function (req, res) {
    const user = req.user;
+
    const subjectName = req.params.subject;
+
+   const data = NotesData.NinthClass[subjectName];
    res.render("ChpNotes9th", {
       title: `9th Class ${subjectName} Notes | Mashal Web`,
       user,
       subjectName,
+      data,
    });
 });
+router.get("/KPK-Boards-Tenth-Class-Notes/:subject", async function (req, res) {
+   const user = req.user;
+
+   const subjectName = req.params.subject;
+
+   const data = NotesData.TenthClass[subjectName];
+   res.render("ChpNotes10th", {
+      title: `10th Class ${subjectName} Notes | Mashal Web`,
+      user,
+      subjectName,
+      data,
+   });
+});
+router.get(
+   "/KPK-Boards-Eleventh-Class-Notes/:subject",
+   async function (req, res) {
+      const user = req.user;
+
+      const subjectName = req.params.subject;
+
+      const data = NotesData.EleventhClass[subjectName];
+      res.render("ChpNotes11th", {
+         title: `11th Class ${subjectName} Notes | Mashal Web`,
+         user,
+         subjectName,
+         data,
+      });
+   }
+);
 
 module.exports = router;

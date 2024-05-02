@@ -48,7 +48,7 @@
       </div>
       <i class="ri-menu-line respNavImg hidden"></i>
       <% if (user) {%>
-      <a href="/profile/<%= user.username %>"
+      <a href="/profile"
          ><button class="pdb">
             <small>Hi,<%= user.username %></small>
          </button></a
@@ -64,22 +64,6 @@
    </nav>
 </header>
 <div class="secNav">
-   <div class="detss">
-      <% if (user) {%>
-      <a href="/profile"
-         ><button class="pdb">
-            <small>Hi,<%= user.username %></small>
-         </button></a
-      >
-      <% } else{ %>
-      <a href="/profile" class="asd">
-         <button class="acc">
-            <i class="ri-account-pin-circle-line"></i>
-            <small>Account</small>
-         </button>
-      </a>
-      <%} %>
-   </div>
    <ul>
       <div>
          <li><i class="ri-home-6-line"></i> <a href="/"> Home</a></li>

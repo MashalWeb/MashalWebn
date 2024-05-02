@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <meta http-equiv="X-UA-Compatible" content="IE=7" />
+      <meta
+         name="description"
+         content="Tenth Class <%= subjectName %> Full Chapter Notes, Solved Exercies, MCQs, Short Question and many more."
+      />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta
+         name="keywords"
+         content="10th Class Notes, Tenth Class <%= subjectName %> Notes, <%= subjectName %> Notes, KPK Boards Tenth <%= subjectName %> Notes, Malakand Board Tenth <%= subjectName %> Class, all classes notes, Tenth class notes, 10th Class <%= subjectName %> pdf Notes"
+      />
+      <meta property="og:title" content="<%= title %>" />
+      <meta http-equiv="Content-Type" content="text/html" />
+      <meta
+         property="og:description"
+         content="Tenth Class <%= subjectName %> Full Chapter Notes of Full Chapter, Solved Exercies, MCQs, Short Question and many more."
+      />
+      <meta property="og:site_name" content="Mashal Web" />
+      <meta name="author" content="Mashal Hurara" />
+      <style>
+         .noteTextArea {
+            margin: 15px 0;
+            padding: 0 60px;
+            width: 100%;
+         }
+
+         .noteTextArea .chapterName {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 32px;
+            padding-bottom: 10px;
+            color: #000000;
+            line-height: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+         }
+
+         .noteTextArea .chapterName span {
+            background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+
+         .noteTextArea p {
+            font-size: 16px;
+            color: #464545;
+         }
+
+         .SelectChapter {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+         }
+
+         .SelectChapter .chMainDev {
+            border-radius: 5px;
+            position: relative;
+            flex-basis: 100%;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            padding: 5px 8px;
+            align-items: center;
+         }
+
+         .SelectChapter .chMainDev .chapter-box {
+            width: 70%;
+            position: relative;
+            padding: 16px 20px;
+            margin: 10px 0;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 3px 15px 4px rgba(0, 0, 0, 0.096);
+            line-height: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            overflow: hidden;
+            /* height: fit-content; */
+         }
+
+         .SelectChapter
+            .chMainDev
+            .chapter-box
+            .SelectChapter
+            .chMainDev
+            .chapter-box
+            h3 {
+            font-size: 18px;
+         }
+
+         .SelectChapter .chMainDev ul li {
+            list-style: none;
+            margin-top: 6px;
+            padding: 10px 3px;
+            cursor: pointer;
+            font-weight: 500;
+            border-bottom: 1px solid #cfcfcf;
+            transition: 0.3s ease;
+            font-size: 14.8px;
+            border-radius: 3px;
+         }
+
+         .SelectChapter .chMainDev ul li:hover {
+            background: #0000000e;
+            transform: scale(1.005);
+         }
+         .SelectChapter .chMainDev ul li:active {
+            scale: 0.9;
+         }
+         .SelectChapter .chMainDev ul li a {
+            text-decoration: none;
+            color: #000b69;
+         }
+         @media only screen and (max-width: 900px) {
+            .SelectChapter .chMainDev {
+               flex-basis: 90%;
+            }
+         }
+
+         @media only screen and (max-width: 700px) {
+            .noteTextArea {
+               padding: 0 16px;
+               margin: 10px 0;
+            }
+            .SelectChapter {
+               padding: 5px 2px;
+            }
+            .SelectChapter .chMainDev {
+               flex-basis: 100%;
+            }
+            .SelectChapter .chMainDev .chapter-box {
+               width: 100%;
+            }
+         }
+
+         @media only screen and (max-width: 500px) {
+            .SelectChapter .chMainDev ul {
+               font-size: 16.6px;
+               padding: 10px;
+            }
+         }
+
+         @media only screen and (max-width: 400px) {
+            .noteTextArea .chapterName {
+               margin-top: 100px;
+               /* font-size: 27px; */
+               font-weight: 800;
+            }
+
+            .noteTextArea {
+               padding: 0 7px;
+               font-size: 14px;
+               line-height: 22px;
+            }
+
+            .SelectChapter .chMainDev ul {
+               font-size: 16.6px;
+            }
+         }
+
+         @media only screen and (max-width: 413px) {
+            .noteTextArea .chapterName {
+               font-size: 27px;
+            }
+         }
+         .engCont {
+            margin-top: 30px;
+            width: 100%;
+            padding: 0 70px;
+         }
+         .engCont p {
+            margin-bottom: 5px;
+            font-size: 15px;
+         }
+         .chapter-box h3 {
+            font-size: 17px;
+         }
+         @media only screen and (max-width: 600px) {
+            .engCont {
+               padding: 0 8px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+
+      <section class="noteTextArea">
+         <h1 class="chapterName">
+            KPK Boards Tenth Class <span><%= subjectName %></span> Notes
+         </h1>
+         <p>
+            If you need 10th Class Khyber Pakhtunkhwa chapter wise PDF notes.
+            You are here on right website for best and excellent notes of Khyber
+            Pakhtunkhwa Boards. All of these boards are helpful for easy
+            preparations. These <%= subjectName %> subject notes of 10th class
+            are important for all students. Both Arts and Science Group Students
+            can easily preparations by These <%= subjectName %> Subject
+            Notes.MashalWeb always provides best and top study notes that are
+            easily to learn and study. Now days there are many expensive books
+            or Notes are available in the Market. Many students cannot pay to
+            purchase all of those notes. So,MashalWeb provides <%= subjectName
+            %> Subject notes to students and teachers in PDF of 10th Class.
+         </p>
+      </section>
+
+      <section class="SelectChapter" id="parent">
+         <div class="chMainDev" id="<%= subjectName %>">
+            <% data.forEach(element => { %>
+            <div class="chapter-box">
+               <h3><%= element.ChapterName %></h3>
+               <ul>
+                  <% element.urls.forEach(surl => { %>
+
+                  <li>
+                     <a href=" <%= surl.url %>" target="_blank">
+                        <%= surl.urlName %>
+                     </a>
+                  </li>
+
+                  <% }) %>
+               </ul>
+            </div>
+            <% }) %>
+         </div>
+      </section>
+      <% include ./partials/footer.ejs %>
+   </body>
+</html>

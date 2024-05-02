@@ -11,7 +11,6 @@ function checkForAuthCookie(cookieName) {
          const userpayload = validateTokan(tokanCookieValue);
          req.user = userpayload;
       } catch (error) {
-         console.log("Tokan Error ::", error);
          return null;
       }
       next();

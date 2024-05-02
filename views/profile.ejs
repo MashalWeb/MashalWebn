@@ -29,16 +29,16 @@
          <div class="PerDets">
             <div class="profileCard">
                <div class="profileImg">
-                  <img src="/images/uploads/<%= userd.avatar %>" alt="" />
+                  <img src="/images/uploads/<%= user.avatar %>" alt="" />
                </div>
                <div class="ProMoreDets">
-                  <h1><%= userd.username %></h1>
+                  <h1><%= user.username %></h1>
                </div>
                <div class="ProMoreDets">
-                  <h3><%= userd.email %></h3>
+                  <h3><%= user.email %></h3>
                </div>
                <div class="ProMoreDets">
-                  <h3>Role : <%= userd.role %></h3>
+                  <h3>Role : <%= user.role %></h3>
                </div>
                <div class="ProMoreDets cen">
                   <a href="/profileEdit">
@@ -46,12 +46,13 @@
                   </a>
                </div>
             </div>
+
             <div class="otherDets">
                <div class="bioDets" style="width: 100%">
                   <div class="bioSec">
                      <h3>About Me</h3>
                      <div class="biocontent ext">
-                        <p><%= userd.bio %></p>
+                        <p><%= user.bio %></p>
                      </div>
                   </div>
                   <div class="bioSec dis sec" style="padding: 10px">

@@ -70,11 +70,12 @@
 
    .commentForm {
       display: flex;
-      width: 50%;
+      width: 45%;
       flex-direction: column;
    }
 
    .commentForm textarea {
+      width: 100%;
       resize: none;
       border: 1px solid #cccccc;
       border-radius: 3px;
@@ -87,19 +88,6 @@
       margin-top: 10px;
    }
 
-   .commentForm input {
-      padding: 10px 5px;
-      margin-bottom: 5px;
-      border: 1px solid #cccccc;
-      outline: none;
-      border-radius: 3px;
-      background: #fff;
-   }
-
-   .commentForm input:focus {
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.342);
-   }
-
    .commentForm button {
       margin-top: 10px;
       padding: 10px 5px;
@@ -110,6 +98,7 @@
       border-radius: 3px;
       font-size: 15.5px;
       cursor: pointer;
+      width: 100%;
       transition: 0.2s ease;
       box-shadow: 0 3px 6px 4px rgba(112, 112, 112, 0.144);
    }
@@ -120,7 +109,7 @@
 
    @media only screen and (max-width: 1000px) {
       .commentForm {
-         width: 100%;
+         width: 98%;
       }
    }
 
@@ -154,7 +143,6 @@
    </div>
    <% if (user) { %>
    <div class="commentForm">
-      <%= locals.error %>
       <form action="/comment" method="post">
          <textarea
             id="comment"
