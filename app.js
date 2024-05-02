@@ -6,6 +6,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var notesRouter = require("./routes/notesRouter");
 var app = express();
+const admainRouter = require("./routes/admain.route");
 const checkForAuthCookie = require("./middleware/checkAuthCookie");
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -20,7 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/Notes/", notesRouter);
-
+app.use("/admain", admainRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
    next(createError(404));

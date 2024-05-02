@@ -20,7 +20,26 @@ function validateTokan(tokan) {
    return payload;
 }
 
+//admain
+
+function CreateTokensForAdmain(admain) {
+   const payload = {
+      // payload --> data
+      _id: admain._id,
+      email: admain.aEmail,
+   };
+   const tokan = jwt.sign(payload, SECRET_KEY);
+   return tokan;
+}
+
+function validateTokanAdmian(tokan) {
+   const payload = jwt.verify(tokan, SECRET_KEY);
+   return payload;
+}
+
 module.exports = {
    CreateTokensForUser,
    validateTokan,
+   CreateTokensForAdmain,
+   validateTokanAdmian,
 };
