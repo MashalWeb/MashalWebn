@@ -892,3 +892,125 @@ form {
         flex-basis: 95%;
     }
 }
+
+.aboutUs {
+
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.aboutUs .a-main-div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0 10px;
+    flex-wrap: wrap;
+}
+
+.a-main-div .a-left {
+    margin-left: 20px;
+    flex-basis: 44%;
+}
+
+.a-left .a-headings h1 {
+    font-size: 35px;
+    letter-spacing: 0.5px;
+    background: -webkit-linear-gradient(45deg, #da62da, #fc9b66);
+    font-weight: 800;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.a-left .a-headings h2 {
+    font-size: 27px;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.a-main-div .a-light {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.a-main-div .a-light img {
+    width: 100%;
+    height: 100%;
+    margin-left: 26px;
+}
+
+.a-left .a-content .a-btn button {
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(45deg, #BB37BB, #fa7b36);
+    border-radius: 30px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.342);
+    box-shadow: 0 3px 8px 4px rgba(0, 0, 0, 0.089);
+    transition: 0.3s;
+}
+
+.a-left .a-content .a-btn button:hover {
+    background: linear-gradient(45deg, #fa7b36, #BB37BB);
+    cursor: pointer;
+}
+
+.a-left .a-content .a-btn button:active {
+    scale: 0.9;
+}
+
+@media only screen and (max-width: 743px) {
+    .a-main-div .a-left {
+        flex-basis: 100%;
+        margin-left: 0;
+    }
+
+    .aboutUs .a-main-div {
+        gap: 6px 0;
+    }
+
+    .a-main-div .a-light {
+        flex-basis: 80%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .a-main-div .a-light {
+        flex-basis: 100%;
+        margin-left: -28px;
+    }
+
+    .aboutUs {
+        padding: 20px 8px;
+    }
+
+    .a-left .a-headings h1 {
+        font-size: 32px;
+    }
+
+    .a-left .a-headings h2 {
+        font-size: 24px;
+    }
+
+    .a-left .a-content p {
+        font-size: 15px;
+    }
+
+    .a-left .a-content .a-btn button {
+        padding: 8px 15px;
+        font-size: 15px;
+    }
+}

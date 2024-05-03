@@ -16,7 +16,6 @@ router.get("/", async function (req, res, next) {
       user,
    });
 });
-
 // ----------------------------------
 
 //-----------------------------------
@@ -41,7 +40,6 @@ router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
    const user = await userModel.findOne({
       username: req.user.username,
    });
-   console.log(user);
    res.render("profile", { title: `${user.username} Profile`, user });
 });
 

@@ -31,11 +31,15 @@ router.get("/", async function (req, res) {
       const admainData = validateTokanAdmian(tokanCookieValue);
       const users = await userModel.find({});
       const comments = await commentModel.find({}).populate("commentBy");
-      console.log(users);
       res.render("Admain", { admainData, users, comments });
    } catch (error) {
       //
       console.log("error", error);
    }
+});
+router.get("/logout", function (req, res) {
+   console.log("hi");
+   res.clearCookie("admainTokan");
+   res.redirect("/admain/login");
 });
 module.exports = router;
