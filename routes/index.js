@@ -4,7 +4,7 @@ const userModel = require("../models/user.model");
 const commentModel = require("../models/comments.model");
 const upload = require("./multer");
 const checkForAuthCookie = require("../middleware/checkAuthCookie");
-
+const searchIndex = require("../Services/searchIndex")
 /* GET home page. */
 
 //-----------------------------------
@@ -22,7 +22,7 @@ router.get("/", async function (req, res, next) {
 
 router.get("/register", function (req, res, next) {
    const user = req.user;
-   res.render("register", { title: "SignUp | Register", user }); //
+   res.render("register", { title: "SignUp | Register", user }); //vbxcv
 });
 
 //---------------------------------------
@@ -183,6 +183,15 @@ router.post("/comment", async function (req, res) {
    res.redirect("/notes");
 });
 
+router.post("/search/result", function (req, res){
+   const user = req.user;
+
+   const searchWord = req.body.search.toLowerCase();
+
+   const filterresult = searchIndex.filter(obj => obj.name.includes(searchWord));
+   console.log(filterresult);
+   res.render("searchResult", {title: "Search Result", user, filterresult, searchWord});
+})
 //------------------------------------------
 
 module.exports = router;

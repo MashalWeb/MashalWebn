@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <style>
+         .searchResults {
+            width: 100%;
+            position: relative;
+            padding: 20px;
+         }
+         .searchResults h1 {
+            font-size: 34px;
+            margin-left: 10px;
+         }
+         .searchResults h1 b {
+            background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+         .errorCase {
+            background: rgba(255, 0, 0, 0.062);
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            width: 70%;
+         }
+         .searchResults form input {
+            width: 300px;
+            padding: 8px 5px;
+            border: none;
+            outline: none;
+            margin-top: 15px;
+            font-size: 16px;
+            margin-right: 10px;
+            border-radius: 4px;
+         }
+         .searchResults form button {
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 15px;
+            text-shadow: 0 2px 3px rgba(255, 0, 0, 0.062);
+            background: linear-gradient(45deg, #bb37bb, #fda97b);
+            cursor: pointer;
+         }
+         .searchResults .showresults {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            position: relative;
+            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            background: #fcfcfc;
+         }
+         .searchResults .showresults .resultBox {
+            flex-basis: 60%;
+            padding: 14px 10px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.048);
+            text-decoration: none;
+            background: #fff;
+         }
+         .searchResults .showresults .resultBox a {
+            color: #000;
+            text-decoration: none;
+         }
+         .searchResults .showresults .resultBox button {
+            margin-top: 6px;
+            padding: 7px 50px;
+            border: none;
+            background: linear-gradient(45deg, #bb37bb, #fda97b);
+            font-size: 15px;
+            color: #fff;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.062);
+            cursor: pointer;
+         }
+         .searchResults .showresults .resultBox h2 {
+            font-weight: 600;
+            text-transform: capitalize;
+         }
+         @media only screen and (max-width: 734px) {
+            .searchResults .showresults .resultBox {
+               flex-basis: 100%;
+            }
+         }
+         @media only screen and (max-width: 502px) {
+            .searchResults {
+               padding: 20px 0;
+            }
+            .errorCase {
+               width: 98%;
+               margin-left: 4;
+            }
+         }
+         @media only screen and (max-width: 402px) {
+            .searchResults h1 {
+               font-size: 25px;
+               line-height: 27px;
+            }
+            .searchResults .showresults .resultBox h2 {
+               font-size: 20px;
+            }
+            .searchResults .showresults .resultBox p {
+               font-size: 15px;
+            }
+            .searchResults form input {
+               width: 270px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+      <section class="searchResults" style="margin-top: 130px">
+         <h1>Search Result For "<b><%= searchWord %></b>"</h1>
+         <% if (filterresult.length <=0) { %>
+         <div class="errorCase">
+            <p>
+               No search match to <b><%= searchWord %></b>, please try to type
+               differt words
+            </p>
+            <form action="/search/result" method="post">
+               <input
+                  type="search"
+                  name="search"
+                  id="searchId"
+                  required="required"
+                  placeholder="search i.e english, computer.."
+               />
+               <button><i class="ri-search-line"></i></button>
+            </form>
+         </div>
+         <% } else{ %>
+
+         <div class="showresults">
+            <% filterresult.forEach(result => { %>
+            <div class="resultBox">
+               <a href="<%= result.url %>">
+                  <h2><%= result.name %></h2>
+                  <p>Some text about the result itme</p>
+                  <a href="<%= result.url %>"
+                     ><button type="button">View</button></a
+                  >
+               </a>
+            </div>
+            <% }) %>
+         </div>
+         <% } %>
+      </section>
+      <% include ./partials/footer.ejs %>
+   </body>
+</html>

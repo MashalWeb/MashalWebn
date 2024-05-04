@@ -46,30 +46,45 @@
     font-weight: 600;
     position: relative;
 }
-
-.textSection .buttons button {
+.textSection form{
+    align-items: start;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 0 10px;
+    padding: 10px;
+    align-items: center;
+}
+.textSection form input{
+    padding: 10px;
     border: none;
     outline: none;
-    background: linear-gradient(45deg, #ff43ff, rgba(255, 73, 255, 0.418));
-    padding: 7px 20px;
-    font-size: 17px;
-    margin: 12px 5px;
-    border-radius: 30px;
-    cursor: pointer;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.342);
-    box-shadow: 0 4px 8px 4px #ff7b0041;
-    transition: 0.3s ease;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
-
-.textSection .buttons button:hover {
-    background: linear-gradient(45deg, #ffa26f, #f7bfa0);
+.textSection form #searchId{
+    background: #fff;
+    border-radius: 5px;
+    backdrop-filter: 40px;
+    box-shadow: 0 3px 15px 4px rgba(255, 94, 0, 0.103);
+    width: 300px;
+    font-size: 16px;
+    transform:  0.3s ease;
 }
-
-.textSection .buttons button:active {
-    transform: scale(0.9);
+.textSection form #searchId:focus{
+    box-shadow: 0 3px 10px 4px rgba(255, 94, 0, 0.178);
 }
-
+.textSection form button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
 .bottomImg {
     position: absolute;
     bottom: 0;
@@ -171,6 +186,10 @@
         padding: 15px 10px;
         padding-bottom: 50px;
     }
+        .textSection form #searchId{
+            width: 280px;
+            font-size: 15px;
+        }
 }
 
 @media only screen and (max-width: 441px) {
@@ -899,11 +918,14 @@ form {
     margin-top: 40px;
     position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .aboutUs .a-main-div {
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: space-around;
     gap: 0 10px;
@@ -972,6 +994,9 @@ form {
 }
 
 @media only screen and (max-width: 743px) {
+    .aboutUs .a-main-div {
+        width: 100%;
+    }
     .a-main-div .a-left {
         flex-basis: 100%;
         margin-left: 0;

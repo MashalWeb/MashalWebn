@@ -42,4 +42,15 @@ router.get("/logout", function (req, res) {
    res.clearCookie("admainTokan");
    res.redirect("/admain/login");
 });
+
+router.get("/comment/delete/:commentId", async (req, res) =>{
+   try {
+      const response = await commentModel.findByIdAndDelete(
+         req.params.commentId
+      );
+      res.redirect("/admain")
+   } catch (error) {
+      console.log("comment Error :: ", error);
+   }
+})
 module.exports = router;
