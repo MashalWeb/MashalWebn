@@ -251,6 +251,137 @@
     }
 }
 
+.what-we-proivde {
+    width: 100%;
+    position: relative;
+
+    padding: 20px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0 10px;
+    flex-wrap: wrap;
+}
+
+.what-we-proivde .wwp-left,
+.wwp-right {
+    flex-basis: 40%;
+    padding: 10px;
+}
+
+.wwp-left .wwp-content h1 {
+    font-size: 33px;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-transform: capitalize;
+}
+
+.wwp-left .wwp-content p {
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.wwp-right {
+    border-radius: 10px;
+    background: #fafafa;
+    position: relative;
+    padding: 20px;
+}
+
+.wwp-right .wwpBoxs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+}
+
+.wwp-right .wwpBoxs .wwpBox {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.024);
+}
+
+.wwp-right .wwpBoxs .wwpBox .wwpBox-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    background: -webkit-linear-gradient(45deg, #bb37bbc0, #ff6d1e);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-transform: capitalize;
+
+}
+
+.wwp-right .wwpBoxs .wwpBox .wwpBox-content p {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 4px;
+}
+
+.wwp-right .wwpBoxs .wwpBox i {
+    font-size: 28px;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6d1e);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@media only screen and (max-width: 835px) {
+    .what-we-proivde {
+        gap: 20px 0;
+    }
+
+    .what-we-proivde .wwp-left,
+    .wwp-right {
+        flex-basis: 80%;
+    }
+}
+
+@media only screen and (max-width: 559px) {
+
+    .what-we-proivde .wwp-left,
+    .wwp-right {
+        flex-basis: 100%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    .what-we-proivde {
+        padding: 20px 8px;
+    }
+
+    .what-we-proivde .wwp-left {
+        padding: 0px;
+    }
+
+    .wwp-left .wwp-content h1 {
+        font-size: 27px;
+    }
+
+    .wwp-right {
+        padding: 20px 7px;
+    }
+
+    .wwp-right .wwpBoxs .wwpBox {
+        padding: 15px 10px;
+    }
+
+    .wwp-right .wwpBoxs .wwpBox .wwpBox-content h2 {
+        font-size: 18px;
+    }
+
+    .wwp-right .wwpBoxs .wwpBox .wwpBox-content p {
+        font-size: 14.5px;
+    }
+}
+
 .services {
     width: 100%;
     height: 100%;
