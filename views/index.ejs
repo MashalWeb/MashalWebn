@@ -20,7 +20,7 @@
       <meta property="og:site_name" content="Mashal Web" />
       <meta property="og:url" content="http://localhost:4000/" />
    </head>
-   <body>
+   <body class="">
       <% include ./partials/navbar.ejs %>
       <section class="mainSection">
          <div class="textSection">
@@ -30,12 +30,17 @@
                   Brighter Online Experience.
                </h1>
             </div>
-            
-               <form action="/search/result" method="post">
-                  <input type="search" name="search" required="required" id="searchId" placeholder="search i.e english, computer..">
-                  <button><i class="ri-search-line"></i></button>
-               </form>
 
+            <form action="/search/result" method="post">
+               <input
+                  type="search"
+                  name="search"
+                  required="required"
+                  id="searchId"
+                  placeholder="Search i.e ninth notes"
+               />
+               <button><i class="ri-search-line"></i></button>
+            </form>
          </div>
          <div class="imageSec hidden">
             <img src="./images/HeroSecImg.png" alt="" />

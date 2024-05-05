@@ -16,6 +16,10 @@
     flex-basis: 50%;
 }
 
+.mainSection .imageSec img {
+    filter: drop-shadow(0 3px 15px #ff894a34);
+}
+
 .mainSection .textSection .heading {
     position: relative;
 }
@@ -46,7 +50,8 @@
     font-weight: 600;
     position: relative;
 }
-.textSection form{
+
+.textSection form {
     align-items: start;
     padding: 0;
     margin-top: 15px;
@@ -57,26 +62,30 @@
     padding: 10px;
     align-items: center;
 }
-.textSection form input{
+
+.textSection form input {
     padding: 10px;
     border: none;
     outline: none;
     background: transparent;
     backdrop-filter: blur(10px);
 }
-.textSection form #searchId{
+
+.textSection form #searchId {
     background: #fff;
     border-radius: 5px;
     backdrop-filter: 40px;
     box-shadow: 0 3px 15px 4px rgba(255, 94, 0, 0.103);
     width: 300px;
     font-size: 16px;
-    transform:  0.3s ease;
+    transform: 0.3s ease;
 }
-.textSection form #searchId:focus{
+
+.textSection form #searchId:focus {
     box-shadow: 0 3px 10px 4px rgba(255, 94, 0, 0.178);
 }
-.textSection form button{
+
+.textSection form button {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -85,6 +94,7 @@
     justify-content: center;
     margin-top: 0;
 }
+
 .bottomImg {
     position: absolute;
     bottom: 0;
@@ -186,10 +196,11 @@
         padding: 15px 10px;
         padding-bottom: 50px;
     }
-        .textSection form #searchId{
-            width: 280px;
-            font-size: 15px;
-        }
+
+    .textSection form #searchId {
+        width: 280px;
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 441px) {
@@ -997,6 +1008,7 @@ form {
     .aboutUs .a-main-div {
         width: 100%;
     }
+
     .a-main-div .a-left {
         flex-basis: 100%;
         margin-left: 0;

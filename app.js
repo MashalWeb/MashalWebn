@@ -8,6 +8,15 @@ var notesRouter = require("./routes/notesRouter");
 var app = express();
 const admainRouter = require("./routes/admain.route");
 const checkForAuthCookie = require("./middleware/checkAuthCookie");
+const { default: mongoose } = require("mongoose");
+
+// DB Connection
+
+mongoose
+   .connect("mongodb://localhost:27017/mashalweb")
+   .then((res) => console.log("DB CONNECTED"))
+   .catch((err) => console.log("Error in DB CONNECTION ", err));
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

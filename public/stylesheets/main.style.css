@@ -18,6 +18,11 @@ body {
   position: relative;
 }
 
+body.dark {
+  background: #2e2e2e;
+  color: #fff;
+}
+
 ::-webkit-scrollbar {
   /* height: 30px; */
   background: #f0f0f0;
@@ -87,9 +92,7 @@ header nav {
   box-shadow: 0 5px 10px 4px #00000013;
   border-radius: 60px;
   padding: 14px 10px;
-  background: linear-gradient(45deg,
-      #bb37bbb0,
-      #fda97bb0);
+  background: #ffffffc9;
   backdrop-filter: blur(40px);
   transition: 0.5s ease;
 
@@ -98,7 +101,7 @@ header nav {
 nav .logo img {
   width: 150px;
   margin-top: 5px;
-  filter: drop-shadow(0 2px 5px #bebebe7c);
+
 }
 
 nav .items ul li {
@@ -121,16 +124,19 @@ nav .items ul li {
   justify-content: center;
   outline: none;
   border: none;
-  padding: 10px 4px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: #fff;
-  font-size: 14px;
+  background: linear-gradient(45deg, #bb37bbd2, #ff6918d2);
+  font-size: 11px;
   cursor: pointer;
   transition: 0.3s ease;
+  color: #fff;
+  padding: 2px;
 }
 
 .acc:hover {
-  background: #fa7b36;
+  background: linear-gradient(45deg, #ff6918d2, #bb37bbd2);
   color: #fff;
 }
 
@@ -139,11 +145,11 @@ nav .items ul li {
 }
 
 .acc i {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .acc small {
-  margin-top: -5px;
+  margin-top: -3px;
 }
 
 .asd {
@@ -168,19 +174,23 @@ nav .items ul li {
 
 .li i {
   font-size: 18px;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.274);
+  background: -webkit-linear-gradient(45deg,
+      #ff6918,
+      #bb37bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 
 nav .items ul li a {
-  color: #fff;
+  color: #000000;
   font-weight: 400;
   font-size: 16.4px;
   text-decoration: none;
   letter-spacing: 0.5px;
   margin-left: -4px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.274);
+
 
 }
 
@@ -188,43 +198,60 @@ nav .items ul li:hover ::before {
   width: 100%;
 }
 
-.back {
+nav .items ul li:hover a {
+  color: #979797;
+}
 
-  box-shadow: 0 5px 10px 4px #00000028;
+.back {
+  background: #f7f7f7;
+  box-shadow: 0 3px 15px 4px #00000028;
   margin-top: 3px;
   width: 98%;
   height: 65px;
+  backdrop-filter: blur(100px);
 }
-
-
 
 .secNav {
   position: fixed;
   width: 100%;
-  height: 100%;
-  top: 0;
-  overflow-y: auto;
+  top: 72px;
   left: 0;
   z-index: 28;
-  display: none;
-  background: linear-gradient(#e482e400, #aa47aa93), url('../images/SecNavImg.png');
+  background: #ffffffad;
+  backdrop-filter: blur(20px);
   background-position: center;
   background-size: cover;
-  box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 13px 15px 4px rgba(0, 0, 0, 0.178);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  display: none;
+  height: 0;
 }
 
+.secNav.open {
+  transition: all 0.3s ease;
+  display: block;
+  height: fit-content;
+}
 
+.secNav.toTop {
+  top: 56px;
+}
 
 .secNav ul {
-  margin-top: 43px;
+  margin-top: 23px;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
 }
 
 .secNav ul li i {
-  color: #ffffff;
-  font-size: 17px;
+  background: -webkit-linear-gradient(45deg,
+      #ff6918,
+      #bb37bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
 }
 
 .secNav ul li {
@@ -234,48 +261,21 @@ nav .items ul li:hover ::before {
   margin-bottom: 10px;
   background: transparent;
   padding: 13px 30px;
-  border-bottom: 0.5px solid #f1f1f175;
+  border-bottom: 0.5px solid #83838375;
   transition: backgroud 0.2s ease;
   cursor: pointer;
-  animation: showFLow 0.7s linear 0s 1;
+
 }
 
-@keyframes showFLow {
-  0% {
-    opacity: 0;
-    margin-top: 50px;
-  }
-
-  100% {
-    opacity: 1;
-    margin-top: 0;
-  }
-}
-
-@keyframes showFUp {
-  0% {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .secNav ul li:hover {
-  background: linear-gradient(45deg, #bb37bb77,
-      #ffa574a1);
-}
-
-.secNav ul li:active a {
-  color: #00c3ff;
+  background: linear-gradient(45deg, #bb37bb5b,
+      #ffa574c7);
 }
 
 .secNav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   font-size: 17px;
 }
 
@@ -286,11 +286,15 @@ nav .items ul li:hover ::before {
 
 
 
-.respNavImg {
+.navIcon i {
   font-size: 28px;
   display: none;
   cursor: pointer;
-  color: #fff;
+  background: -webkit-linear-gradient(45deg,
+      #ff6918,
+      #bb37bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
@@ -338,7 +342,7 @@ nav .items ul li:hover ::before {
     display: none;
   }
 
-  .respNavImg {
+  .navIcon i {
     display: block;
   }
 }

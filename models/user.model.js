@@ -4,10 +4,7 @@ const {
    CreateTokensForUser,
    validateTokan,
 } = require("../Services/authentication");
-mongoose
-   .connect("mongodb://127.0.0.1:27017/mashalweb")
-   .then((res) => console.log("DB CONNECTED"))
-   .catch((err) => console.log("Error in DB CONNECTION ", err));
+
 const userSchema = new mongoose.Schema({
    username: {
       type: String,

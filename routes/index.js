@@ -4,8 +4,9 @@ const userModel = require("../models/user.model");
 const commentModel = require("../models/comments.model");
 const upload = require("./multer");
 const checkForAuthCookie = require("../middleware/checkAuthCookie");
-const searchIndex = require("../Services/searchIndex")
+const searchIndex = require("../Services/searchIndex");
 /* GET home page. */
+const uploadOnCloudinary = require("../Services/cloudinary");
 
 //-----------------------------------
 
@@ -143,10 +144,18 @@ router.get("/logout", function (req, res) {
 
 router.post("/upload", upload.single("image"), async function (req, res) {
    try {
-      await userModel.findByIdAndUpdate(req.user._id, {
-         avatar: req.file.filename,
-      });
+      const localFilePath = req.file.path;
+      if (!localFilePath) {
+         console.log("No Files is given");
+      }
+      console.log(localFilePath);
 
+      // for deployment
+
+      // const avatar = await uploadOnCloudinary(localFilePath);
+      await userModel.findByIdAndUpdate(req.user._id, {
+         avatar: req.file.filename, //avatar.url
+      });
       res.redirect("/profileEdit");
    } catch (error) {
       console.log("ERROR in /upload route:: ", error);
@@ -183,15 +192,22 @@ router.post("/comment", async function (req, res) {
    res.redirect("/notes");
 });
 
-router.post("/search/result", function (req, res){
+router.post("/search/result", function (req, res) {
    const user = req.user;
 
-   const searchWord = req.body.search.toLowerCase();
+   const searchWord = req.body.search.toLowerCase().trim();
 
-   const filterresult = searchIndex.filter(obj => obj.name.includes(searchWord));
+   const filterresult = searchIndex.filter((obj) =>
+      obj.name.includes(searchWord)
+   );
    console.log(filterresult);
-   res.render("searchResult", {title: "Search Result", user, filterresult, searchWord});
-})
+   res.render("searchResult", {
+      title: "Search Result",
+      user,
+      filterresult,
+      searchWord,
+   });
+});
 //------------------------------------------
 
 module.exports = router;

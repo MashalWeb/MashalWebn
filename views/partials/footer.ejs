@@ -24,18 +24,22 @@
    window.addEventListener("scroll", (e) => {
       if (window.scrollY >= 80) {
          document.querySelector("header nav").classList.add("back");
+         document.querySelector(".secNav").classList.add("toTop");
       } else if (window.scrollY < 80) {
          document.querySelector("header nav").classList.remove("back");
+         document.querySelector(".secNav").classList.remove("toTop");
       }
    });
 
-   const showSecNav = document.querySelector(".respNavImg");
-
+   const showSecNav = document.querySelector(".navIcon");
+   let flage = 0;
    showSecNav.addEventListener("click", () => {
-      document.querySelector(".secNav").style.display = "block";
-   });
-
-   document.querySelector(".close").addEventListener("click", () => {
-      document.querySelector(".secNav").style.display = "none";
+      document.querySelector(".secNav").classList.toggle("open");
+      let icon = document.querySelector(".navIcon i");
+      if (icon.className == "ri-menu-line") {
+         icon.classList = "ri-close-line";
+      } else if (icon.classList == "ri-close-line") {
+         icon.classList = "ri-menu-line";
+      }
    });
 </script>
