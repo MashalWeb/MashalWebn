@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -10,10 +11,8 @@ const admainRouter = require("./routes/admain.route");
 const checkForAuthCookie = require("./middleware/checkAuthCookie");
 const { default: mongoose } = require("mongoose");
 
-// DB Connection
-
 mongoose
-   .connect("mongodb://localhost:27017/mashalweb")
+   .connect(process.env.MONGODB_URL)
    .then((res) => console.log("DB CONNECTED"))
    .catch((err) => console.log("Error in DB CONNECTION ", err));
 
@@ -46,4 +45,5 @@ app.use(function (err, req, res, next) {
    res.status(err.status || 500);
    res.render("error");
 });
+
 module.exports = app;

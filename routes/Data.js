@@ -5054,7 +5054,163 @@ const EleventhClass = {
       // missing
    ],
 };
-
+const TwelfthClass = {
+   English: [
+      {
+         ChapterName: "Chapter 1 → Operating System Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1xtNx8K6MhOadNfrCN35ooHIxVLmFeXcq/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/18ED91TNhRc0ImNVxHKdUKdnJA7GCzLQb/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1boCMtRQKzHgsDNbHhJYAHT7lWs2Rk5po/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 2 → System Development Life Cycle Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1G2-_Iu3tuVs9beIg8FbWKWxoaEMnsUEX/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1QwujVbbcLFUel9JqskOinNBFhYMQzdO2/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1t41EgEbYNxz9O_xBLjXV98-4JhWwouxi/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 3 → Object Oriented Programming in C++ Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/12T_Q84TJ_wU4qUDWsEvhy6NEWLGPSvlg/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/13Q86aPQoqsJfKc9yj8gNvyZfnj5Xixz5/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1TGIyEt3EuvsPsoV-c6_Orb_nyWu-e4lB/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 4 → Control Structures Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1VIrdPFuewZ0nU6HjCE_S9d_-pK8Ws8F7/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1iPcvX0Hl0jvmQr9xXn5reSDFiGZVBy2X/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/15yPHM8QNyW82vM96YAEO6-ZAmFQah7gP/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 5 → Arrays and Strings Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1khmglbg-IA31MKosZnCuoPTvbCkzzcK_/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1RAO6urPO8RjMfHprKgyLIRCZvSIu9YBA/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1LDqiY39zaM5yU79wkxdBepKrZp_qM_Ym/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 6 → Functions Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1Bx120K6J0fRLyz11zlaavoNCHHgiEe6N/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/14xsT8BhIetyDyw9aKCjUUMB5CIWqEDbI/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1I95lS4t5p2qy8ZwvsWWchcBecQeVGAOp/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 7 → Pointers Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1KJJSL3duRFKpOYod06XZrdBdfTDf5ecM/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1ZiwXc362Jn0h0Frb4sBXi6GX_d-KcVKO/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1HoXKmqe9GbUBqFmTkZlrNS7-pQeKyhlO/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 8 → Objects and Classes Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1njqA81oYSuwq7ZmCcQf2ygSLxs99m2WT/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1ypvlMTMhXGAGKOTYowabL7DqRxuoLk-A/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/10q-4bKcSoHpTz9aHEj5Gudt5f1JHAuOK/view",
+            },
+         ],
+      },
+      {
+         ChapterName: "Chapter 9 → File Handling Notes",
+         urls: [
+            {
+               urlName: "Full Chapter Notes",
+               url: "https://drive.google.com/file/d/1wSOHlc5X2DXsr-YZWazcj9J-rJMgYN4C/view",
+            },
+            {
+               urlName: "Short Questions Answers",
+               url: "https://drive.google.com/file/d/1Qe3eO1R09XhNOxejD1ReM3qHhY2MY3Ly/view",
+            },
+            {
+               urlName: "Complete Exercise Solved Notes",
+               url: "https://drive.google.com/file/d/1gWMitXl30Ij4IBM-TVIpgPzXLMEzyRDn/view",
+            },
+         ],
+      },
+   ],
+};
 module.exports = {
    NinthClass,
    TenthClass,

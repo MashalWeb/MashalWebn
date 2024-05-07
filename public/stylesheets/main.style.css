@@ -104,6 +104,11 @@ nav .logo img {
 
 }
 
+nav .items ul {
+  margin-top: 11px;
+
+}
+
 nav .items ul li {
   display: inline-block;
   /* padding: 10px 20px; */
@@ -371,23 +376,6 @@ nav .items ul li:hover a {
   }
 }
 
-
-footer {
-  margin-top: 30px;
-  width: 100%;
-  position: relative;
-  background: url("../images/footerImg.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 10px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-}
-
-
-
 .js-preloader {
   position: fixed;
   top: 0;
@@ -503,8 +491,3 @@ footer {
     transition: none;
   }
 }
-
-
-
-
-/* extra */

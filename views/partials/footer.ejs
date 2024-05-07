@@ -1,6 +1,257 @@
-<footer>
-   <h1>Footer</h1>
-</footer>
+<style>
+   .info_section {
+      background: #fafafa;
+      color: #000000;
+      padding: 45px 0 15px 0;
+      position: relative;
+      z-index: 1;
+      margin-top: 40px;
+   }
+   .info_section::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      width: 70%;
+      height: 50%;
+      background: linear-gradient(45deg, #bb37bb80, #fa7b3693);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      filter: blur(100px);
+   }
+   .info_section h4 {
+      font-weight: 600;
+      margin-bottom: 20px;
+   }
+
+   .info_section .info_col {
+      margin-bottom: 30px;
+   }
+
+   .info_section .info_contact .contact_link_box {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+   }
+
+   .info_section .info_contact .contact_link_box a {
+      margin: 5px 0;
+      color: #414141;
+      text-decoration: none;
+   }
+
+   .info_section .info_contact .contact_link_box a i {
+      margin-right: 5px;
+      font-size: 18px;
+      background: -webkit-linear-gradient(45deg, #bb37bb, #fa7b36);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+
+   .info_section .info_contact .contact_link_box a:hover {
+      color: #000000;
+   }
+
+   .info_section .info_social {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 10px;
+   }
+
+   .info_section .info_social a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border-radius: 100%;
+      margin-right: 10px;
+      font-size: 33px;
+      text-decoration: none;
+   }
+
+   .info_section .info_social a i {
+      background: -webkit-linear-gradient(45deg, #bb37bb, #fa7b36);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+   .info_section .info_social a:hover {
+      color: #b8b8b8;
+   }
+
+   .info_section .info_links {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+   }
+
+   .info_section .info_links a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #414141;
+      text-decoration: none;
+   }
+   .info_section .info_links a i {
+      margin-right: 5px;
+      background: -webkit-linear-gradient(45deg, #bb37bb, #fa7b36);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+   .info_section .info_links a:hover {
+      color: #000000;
+   }
+
+   .info_section form input {
+      border: none;
+      border-bottom: 1px solid #b4b4b4;
+      background-color: transparent;
+      width: 100%;
+      height: 45px;
+      color: #000000;
+      outline: none;
+   }
+
+   .info_section form input::-webkit-input-placeholder {
+      color: #414141;
+   }
+
+   .info_section form input:-ms-input-placeholder {
+      color: #414141;
+   }
+
+   .info_section form input::-ms-input-placeholder {
+      color: #414141;
+   }
+
+   .info_section form input::placeholder {
+      color: #414141;
+   }
+
+   .info_section form button {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      padding: 10px 55px;
+      color: #ffffff;
+      border-radius: 5px;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      border: none;
+      margin-top: 15px;
+      background: linear-gradient(45deg, #bb37bb, #fda97b);
+   }
+
+   .info_section form button:hover {
+      background: linear-gradient(45deg, #fda97b, #bb37bb);
+   }
+   @media only screen and (max-width: 557px) {
+      .info_section::before {
+         width: 50%;
+         height: 70%;
+         filter: blur(170px);
+      }
+      .info_section h4 {
+         text-align: center;
+      }
+   }
+</style>
+<section class="info_section layout_padding2">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+               <h4>Address</h4>
+               <div class="contact_link_box">
+                  <a href="">
+                     <i class="ri-map-pin-2-fill"></i>
+                     <span> Chakdara Dir Lower KPK </span>
+                  </a>
+                  <a href="">
+                     <i class="ri-phone-fill"></i>
+                     <span> +92 3471309916 </span>
+                  </a>
+                  <a href="">
+                     <i class="ri-mail-fill"></i>
+                     <span> itsmashal2006@gmail.com </span>
+                  </a>
+               </div>
+            </div>
+            <div class="info_social">
+               <a href="">
+                  <i class="ri-facebook-circle-fill"></i>
+               </a>
+               <a href="">
+                  <i class="ri-whatsapp-fill"></i>
+               </a>
+               <a href="">
+                  <i class="ri-instagram-fill"></i>
+               </a>
+               <a href="">
+                  <i class="ri-linkedin-box-fill"></i>
+               </a>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_detail">
+               <h4>About</h4>
+               <p>
+                  A Trusted Web Service To Provide Free Resources And
+                  Infromations To Our Clients.
+               </p>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-2 mx-auto info_col">
+            <div class="info_link_box">
+               <h4>Links</h4>
+               <div class="info_links">
+                  <a class="active" href="/"
+                     ><i class="ri-home-6-line"></i> Home
+                  </a>
+                  <a class="" href="/Notes"
+                     ><i class="ri-sticky-note-line"></i> Notes
+                  </a>
+                  <a class="" href="/"
+                     ><i class="ri-article-line"></i> Papers
+                  </a>
+                  <a class="" href="/"><i class="ri-news-line"></i> Blogs </a>
+                  <a class="" href="/"
+                     ><i class="ri-user-search-line"></i> About Me
+                  </a>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3 info_col">
+            <h4>Subscribe</h4>
+            <form action="#">
+               <input type="text" placeholder="Enter email" />
+               <button type="submit">Subscribe</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
 <script>
    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

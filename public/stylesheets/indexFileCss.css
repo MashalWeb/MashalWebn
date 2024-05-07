@@ -14,6 +14,21 @@
 
 .mainSection .textSection {
     flex-basis: 50%;
+    z-index: 1;
+}
+
+.textSection::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(#bb37bb98, #fa7b3667);
+    width: 30%;
+    height: 30%;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(120px);
 }
 
 .mainSection .imageSec img {
@@ -201,6 +216,11 @@
         width: 280px;
         font-size: 15px;
     }
+
+    .textSection::before {
+        top: 10%;
+        width: 40%;
+    }
 }
 
 @media only screen and (max-width: 441px) {
@@ -272,7 +292,7 @@
 
 .wwp-left .wwp-content h1 {
     font-size: 33px;
-    font-weight: 650;
+    font-weight: 500;
     letter-spacing: 0.5px;
     background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
     -webkit-text-fill-color: transparent;
@@ -288,9 +308,25 @@
 
 .wwp-right {
     border-radius: 10px;
-    background: #f7f7f7;
+    background: #fcfcfc;
     position: relative;
     padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.wwp-right::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(#bb37bb42, #fa7b36c2);
+    width: 30%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(100px);
 }
 
 .wwp-right .wwpBoxs {
@@ -300,7 +336,7 @@
 }
 
 .wwp-right .wwpBoxs .wwpBox {
-    background: #fff;
+    background: #ffffff1c;
     padding: 15px;
     border-radius: 10px;
     display: flex;
@@ -365,6 +401,10 @@
         font-size: 27px;
     }
 
+    .wwp-left .wwp-content p {
+        font-size: 14px;
+    }
+
     .wwp-right {
         padding: 20px 7px;
     }
@@ -389,65 +429,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-form .n-e input {
-    width: 310px;
-    padding: 10px 6px;
-    border: none;
-    outline: none;
-    border: 1.3px solid #fc9b66cc;
-    border-radius: 5px;
-    margin: 0 5px;
-    padding-left: 10px;
-
-    color: #000;
-}
-
-form .n-e input::placeholder {
-    color: #000;
-}
-
-form .n-e input:focus {
-    background: #fc9b663f;
-}
-
-.Subject {
-    padding: 10px 6px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    border: 1.3px solid #fc9b66cc;
-
-    color: #000;
-    width: 98%;
-    margin: 17px 0;
-}
-
-.Subject::placeholder {
-    color: #000;
-}
-
-.Subject:focus {
-    background: #fc9b663f;
-}
-
-form textarea {
-    padding: 10px 6px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    border: 1.3px solid #fc9b66cc;
-    transition: 0.2s ease;
-    color: #000;
-    width: 98%;
-    resize: none;
-    background-color: #fafafad3;
-    backdrop-filter: blur(3px);
-}
-
-form textarea::placeholder {
-    color: #000e36;
+    overflow: hidden;
 }
 
 form button {
@@ -474,13 +456,6 @@ form button:hover {
             #fda97b, #BB37BB);
 }
 
-form {
-    overflow: hidden;
-}
-
-
-
-
 
 .goals {
     padding: 20px;
@@ -497,7 +472,34 @@ form {
 .goals .goalsText {
     margin-top: -20px;
     flex-basis: 45%;
+    position: relative;
+    z-index: 1;
+}
 
+.goals .goalsText::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #BB37BB, #ff6d1f);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(90px);
+}
+
+.goals .goalsText::after {
+    content: "";
+    position: absolute;
+    bottom: -0px;
+    right: -0px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #BB37BB, #ff6d1f);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(90px);
 }
 
 .goals .goalsText h1 {
@@ -507,7 +509,7 @@ form {
     font-size: 39px;
     letter-spacing: 0.5px;
     margin-bottom: 5px;
-    font-weight: 650;
+    font-weight: 500;
 }
 
 .goals .goalsText p {
@@ -593,23 +595,51 @@ form {
 .a-main-div .a-left {
     margin-left: 20px;
     flex-basis: 44%;
+    position: relative;
+    z-index: 1;
+}
+
+.a-main-div .a-left::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #BB37BB, #ff6d1f);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(90px);
+}
+
+.a-main-div .a-left::after {
+    content: "";
+    position: absolute;
+    bottom: -0px;
+    right: -0px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #BB37BB, #ff6d1f);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(90px);
 }
 
 .a-left .a-headings h1 {
     font-size: 35px;
     letter-spacing: 0.5px;
     background: -webkit-linear-gradient(45deg, #BB37BB, #ff772d);
-    font-weight: 800;
+    font-weight: 500;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .a-left .a-headings h2 {
-    font-size: 27px;
+    font-size: 25px;
     line-height: 25px;
     letter-spacing: 0.5px;
     margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: 400;
     color: #000;
 }
 
@@ -705,6 +735,10 @@ form {
     position: relative;
     padding: 20px;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
 }
 
@@ -722,22 +756,23 @@ form {
 }
 
 .main-ser-box {
+    width: 100%;
 
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px 30px;
     padding: 10px;
     align-items: center;
     justify-content: center;
 }
 
 .ser-box {
-    background: #ffffff;
-    backdrop-filter: blur(20px);
+    background: transparent;
+    /* backdrop-filter: blur(20px); */
     width: 300px;
     height: 180px;
-    padding: 10px;
+    padding: 10px 8px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -757,7 +792,7 @@ form {
     position: absolute;
     top: 50%;
     left: 50%;
-    background: linear-gradient(#bb37bb41, #ff590056);
+    background: linear-gradient(#8626863a, #ff6d1e62);
     z-index: -1;
     border-radius: 50%;
     filter: blur(60px);
@@ -800,6 +835,15 @@ form {
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.164);
     border-radius: 20px;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.ser-box .ser-text button:active {
+    scale: 0.9;
+}
+
+.ser-box .ser-text button:hover {
+    background: linear-gradient(45deg, #bb37bbf5, #fa7b36f8);
 }
 
 @media only screen and (max-width: 970px) {
@@ -810,10 +854,10 @@ form {
 
 @media only screen and (max-width: 420px) {
     .ser-box {
-        width: 97%;
+        width: 100%;
     }
 
     .services {
-        padding: 20px 8px;
+        padding: 20px 6px;
     }
 }
