@@ -20,7 +20,7 @@
 .textSection::before {
     content: "";
     position: absolute;
-    background: linear-gradient(#bb37bb98, #fa7b3667);
+    background: linear-gradient(#bb37bb48, #fa7b364d);
     width: 30%;
     height: 30%;
     top: 30%;

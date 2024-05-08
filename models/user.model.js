@@ -23,13 +23,6 @@ const userSchema = new mongoose.Schema({
       type: String,
       default: "Student",
    },
-   posts: [
-      {
-         type: mongoose.Schema.Types.ObjectId,
-         ref: "Post",
-         default: [],
-      },
-   ],
    bio: {
       type: String,
    },

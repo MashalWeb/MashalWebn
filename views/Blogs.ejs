@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/blog.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+      <div class="mainHeading-blog">
+         <div class="mainBlogContent">
+            <h1>Blogs</h1>
+            <p>
+               Odio et unde deleniti. Deserunt numquam exercitationem. Officiis
+               quo odio sint voluptas consequatur ut a odio voluptatem. Sit
+               dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit
+               quaerat ipsum dolorem.
+            </p>
+         </div>
+      </div>
+      <section class="blogSec">
+         <div class="blogsBoxs">
+            <% Blogs.reverse().forEach(blog => { %>
+            <div class="blogBox">
+               <div class="blogImg">
+                  <img
+                     src="/images/uploads/<%= blog.blogImg %>"
+                     alt="<%= blog.blogTitle %> "
+                     aria-details="<%= blog.blogTitle %>"
+                  />
+               </div>
+               <div class="blogContent">
+                  <h1><a href="#"><%= blog.blogTitle %></a></h1>
+                  <div class="content"><p><%= blog.blogCaption %></p></div>
+
+                  <button><a href="#">See More</a></button>
+               </div>
+               <div class="blogDeatils">
+                  <div class="by"><i class="ri-user-fill"></i> Admain</div>
+                  <div class="date">
+                     <i class="ri-calendar-2-fill"></i> <%=
+                     blog.Date.toLocaleDateString() %>
+                  </div>
+                  <div class="category">
+                     <i class="ri-task-fill"></i> <%= blog.blogCategory[0] %>
+                  </div>
+                  <div class="Comment"><i class="ri-message-fill"></i> 2</div>
+               </div>
+            </div>
+            <% }) %>
+         </div>
+         <div class="blogSidebar">
+            <div class="recantBlogs">
+               <h3 class="he" style="margin-bottom: 16px">Recantly Blogs</h3>
+               <div class="links">
+                  <% Blogs.reverse().forEach(blog => { %>
+                  <a href="#"
+                     ><h3>
+                        <%= blog.blogTitle %>
+                        <span
+                           ><i class="ri-calendar-2-fill"></i> <%=
+                           blog.Date.toLocaleDateString() %></span
+                        >
+                     </h3></a
+                  >
+                  <% }) %>
+               </div>
+            </div>
+
+            <div class="tags">
+               <h3 class="he">Tages</h3>
+               <div class="tages">
+                  <button><a href="#">Eduction</a></button>
+                  <button><a href="#">Technolgy</a></button>
+                  <button><a href="#">Tip & Tricks</a></button>
+               </div>
+            </div>
+
+            <div class="connect">
+               <h3 class="he">Get In Touch</h3>
+               <div class="connecti">
+                  <a href="#"><i class="ri-whatsapp-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <% include ./partials/footer.ejs %>
+      <!-- <script>
+         const content = document.querySelector(".content").textContent;
+         console.log(content);
+         const parse = new DOMParser();
+
+         const htmls = parse.parseFromString(content, "text/html");
+         console.log(htmls);
+         document.querySelector(".parseHtml").append(htmls.body);
+      </script> -->
+   </body>
+</html>

@@ -7,6 +7,7 @@ const checkForAuthCookie = require("../middleware/checkAuthCookie");
 const searchIndex = require("../Services/searchIndex");
 /* GET home page. */
 const uploadOnCloudinary = require("../Services/cloudinary");
+const blogsModel = require("../models/blogs.model");
 
 //-----------------------------------
 
@@ -65,6 +66,14 @@ router.get("/Notes", async function (req, res, next) {
 
    res.render("Notes", { title: "Chapter Wise Notes", comments, user });
 });
+
+router.get("/Blogs", async (req, res) => {
+   const user = req.user;
+   const Blogs = await blogsModel.find({});
+
+   res.render("Blogs", { title: "Blogs | Mashal Web", user, Blogs });
+});
+
 //----------------------------------
 
 //-----------------------------------------
@@ -208,6 +217,7 @@ router.post("/search/result", function (req, res) {
       searchWord,
    });
 });
+
 //------------------------------------------
 
 module.exports = router;
