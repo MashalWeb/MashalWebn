@@ -10,6 +10,7 @@ const blogSchema = new mongoose.Schema(
          type: ["Education", "Technology", "Tip & Trick"],
          default: [],
       },
+      blogComments: [],
       Date: {
          type: Date,
          default: Date.now,

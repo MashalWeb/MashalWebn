@@ -23,6 +23,8 @@
             align-items: center;
             justify-content: center;
             background: #161616;
+            flex-direction: column;
+            gap: 10px;
          }
          form {
             background: #333333;
@@ -64,6 +66,9 @@
       </style>
    </head>
    <body>
+      <button class="imgImport">img Import</button>
+      <button class="h2Import">h2 Import</button>
+      <button class="pImport">p Import</button>
       <form
          action="/admain/createBlog"
          method="post"
@@ -112,5 +117,30 @@
 
          <button type="submit">Create</button>
       </form>
+      <script>
+         let textAreaSnipt = document.querySelector("textarea");
+         textAreaSnipt.textContent = `          <h1> heading </h1>   
+         
+         <p> caption text </p>
+                           
+         <h2> sub-heading here </h2>
+         
+         <img src="" alt="" >
+         
+         <ol>
+            <li> steps here </li>
+            <li> steps here </li>
+            <li> steps here </li>   
+         </ol>`;
+         document.querySelector(".imgImport").addEventListener("click", () => {
+            textAreaSnipt.textContent += `  <img src="" alt="" >     `;
+         });
+         document.querySelector(".h2Import").addEventListener("click", () => {
+            textAreaSnipt.textContent += `  <h2>     </h2>     `;
+         });
+         document.querySelector(".pImport").addEventListener("click", () => {
+            textAreaSnipt.textContent += `  <p>     </p>     `;
+         });
+      </script>
    </body>
 </html>

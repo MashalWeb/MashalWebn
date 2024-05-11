@@ -10,10 +10,9 @@
          <div class="mainBlogContent">
             <h1>Blogs</h1>
             <p>
-               Odio et unde deleniti. Deserunt numquam exercitationem. Officiis
-               quo odio sint voluptas consequatur ut a odio voluptatem. Sit
-               dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit
-               quaerat ipsum dolorem.
+               Unlock the power of knowledge with our educational insights. Dive
+               into our latest blog posts and Empower yourself with education,
+               technology, and invaluable tips & tricks. Start reading now!
             </p>
          </div>
       </div>
@@ -29,16 +28,23 @@
                   />
                </div>
                <div class="blogContent">
-                  <h1><a href="#"><%= blog.blogTitle %></a></h1>
+                  <h1>
+                     <a
+                        href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>"
+                     >
+                        <%= blog.blogTitle %>
+                     </a>
+                  </h1>
                   <div class="content"><p><%= blog.blogCaption %></p></div>
 
-                  <button><a href="#">See More</a></button>
+                  <button><a href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>">See More</a></button>
                </div>
                <div class="blogDeatils">
                   <div class="by"><i class="ri-user-fill"></i> Admain</div>
                   <div class="date">
                      <i class="ri-calendar-2-fill"></i> <%=
-                     blog.Date.toLocaleDateString() %>
+                     blog.Date.toUTCString().split(" ").splice(1,
+                     3).toLocaleString() %>
                   </div>
                   <div class="category">
                      <i class="ri-task-fill"></i> <%= blog.blogCategory[0] %>
@@ -53,12 +59,13 @@
                <h3 class="he" style="margin-bottom: 16px">Recantly Blogs</h3>
                <div class="links">
                   <% Blogs.reverse().forEach(blog => { %>
-                  <a href="#"
+                  <a href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>"
                      ><h3>
                         <%= blog.blogTitle %>
                         <span
                            ><i class="ri-calendar-2-fill"></i> <%=
-                           blog.Date.toLocaleDateString() %></span
+                           blog.Date.toUTCString().split(" ").splice(1,
+                           3).toLocaleString() %></span
                         >
                      </h3></a
                   >

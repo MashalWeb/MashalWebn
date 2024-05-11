@@ -67,6 +67,8 @@ router.get("/Notes", async function (req, res, next) {
    res.render("Notes", { title: "Chapter Wise Notes", comments, user });
 });
 
+//------------------
+
 router.get("/Blogs", async (req, res) => {
    const user = req.user;
    const Blogs = await blogsModel.find({});
@@ -74,6 +76,38 @@ router.get("/Blogs", async (req, res) => {
    res.render("Blogs", { title: "Blogs | Mashal Web", user, Blogs });
 });
 
+router.get("/Blogs/:blogId/:blogName", async function (req, res) {
+   const blog = await blogsModel.findOne({
+      _id: req.params.blogId,
+   });
+   const user = req.user;
+   const Blogs = await blogsModel.find({});
+   try {
+      if (blog) {
+         res.render("blogView", {
+            blog,
+            title: `${blog.blogTitle} | Mashal Web`,
+            user,
+            Blogs,
+         });
+      }
+   } catch (error) {
+      console.log("Error ::", error);
+   }
+});
+
+router.post("/Blog/:blogId/comment", async function (req, res) {
+   const { comment, commentBy, commentEmail } = req.body;
+   const blog = await blogsModel.findById(req.params.blogId);
+   blog.blogComments.push({
+      comment: comment,
+      commentBy: commentBy,
+      commentEmail: commentEmail,
+   });
+
+   await blog.save({ validateBeforeSave: true });
+   res.redirect("back");
+});
 //----------------------------------
 
 //-----------------------------------------

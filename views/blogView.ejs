@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/blog.css" />
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+
+      <section class="blogView">
+         <div class="viewContent">
+            <div class="html" style="display: none">
+               <%= blog.blogContent %>
+            </div>
+            <article>
+               <main></main>
+            </article>
+         </div>
+         <div class="blogSidebar">
+            <div class="recantBlogs">
+               <h3 class="he" style="margin-bottom: 16px">Recantly Blogs</h3>
+               <div class="links">
+                  <% Blogs.reverse().forEach(blog => { %>
+                  <a href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>"
+                     ><h3>
+                        <%= blog.blogTitle %>
+                        <span
+                           ><i class="ri-calendar-2-fill"></i> <%=
+                           blog.Date.toLocaleDateString() %></span
+                        >
+                     </h3></a
+                  >
+                  <% }) %>
+               </div>
+            </div>
+
+            <div class="tags">
+               <h3 class="he">Tages</h3>
+               <div class="tages">
+                  <button><a href="#">Eduction</a></button>
+                  <button><a href="#">Technolgy</a></button>
+                  <button><a href="#">Tip & Tricks</a></button>
+               </div>
+            </div>
+
+            <div class="connect">
+               <h3 class="he">Get In Touch</h3>
+               <div class="connecti">
+                  <a href="#"><i class="ri-whatsapp-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <form action="/Blog/<%= blog._id%>/comment" class="commentForm" method="post">
+         <h1>Leave Your Message</h1>
+         <textarea name="comment" id="" cols="30" rows="10" placeholder="Your Message" required="required"></textarea>
+         <input type="text" name="commentBy" id="" placeholder="Your Name .."   required="required">
+         <input type="email" name="commentEmail" id="" placeholder="Your Email"  required="required">
+         <button type="submit">Comment</button>
+      </form>
+
+      <% if (blog.blogComments.length <= 0) { %>
+         <div><p>No Comments Yet ...</p></div>
+      <% } else { %>
+         <section class="commentShow">
+            <h1>Comments (<%= blog.blogComments.length %>)</h1>
+            <% blog.blogComments.forEach(blogComment => { %>
+               <div class="commentBox">
+                  <div class="comment-info">
+                     <h3><%= blogComment.commentBy %></h3>
+                     <small><%= blogComment.commentEmail %></small>
+                  </div>
+                  <div class="comment-content">
+                     <p><%= blogComment.comment %></p>
+                  </div>
+               </div>
+            <% }) %>
+         </section>
+      <% } %>
+      <% include ./partials/footer.ejs %>
+      <script>
+         const html = document.querySelector(".html").textContent;
+         const parseHtml = new DOMParser();
+         const parseContent = parseHtml.parseFromString(html, "text/html");
+
+         document.querySelector("main").innerHTML = parseContent.body.innerHTML;
+      </script>
+   </body>
+</html>
