@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="/stylesheets/papers.css">
+   </head>
+   <body>
+      <% include ./partials/navbar.ejs %>
+
+      <div class="subjectSec" style="margin-top: 140px">
+         <div class="mainContent">
+            <div class="subjectText" id="SelectSub">
+               <h1>KPK Boards <span>All Classes</span> Past Year Papers</h1>
+               <p>
+                  If you want Past Papers of 9th Class In PDF last five years you are here on right page. Federal Board FBISE and Punjab Board Paper Notes in PDF For your upcoming exams tests. Mashal Web Notes is providing you past papers notes. Last five year’s past papers are easily to learn and prepare your upcoming exams by the help of Past Years Papers. Learn online all helpful notes with solved question Answers in PDF for preparations of your exams and Papers. Ninth Class Old Papers All Subjects In PDF With Solved Notes for All Pakistani Students.
+               </p>
+            </div>
+            <div class="faq-container">
+               <details>
+                  <summary>
+                     <span class="faq-title">
+                        Ninth Class Past Year Papers
+                     </span>
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="expand-icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     >
+                        <path
+                           stroke="none"
+                           d="M0 0h24v24H0z"
+                           fill="none"
+                        ></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                     </svg>
+                  </summary>
+                  <div class="faq-content">
+                     <ul>
+                        <a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href="">
+                           <li>Pasr Paper Name</li>
+                        </a>
+                     </ul>
+                  </div>
+               </details>
+               <details>
+                  <summary>
+                     <span class="faq-title">
+                        Tenth Class Past Year Papers
+                     </span>
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="expand-icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     >
+                        <path
+                           stroke="none"
+                           d="M0 0h24v24H0z"
+                           fill="none"
+                        ></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                     </svg>
+                  </summary>
+                  <div class="faq-content">
+                     <ul>
+                        <a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href="">
+                           <li>Pasr Paper Name</li>
+                        </a>
+                     </ul>
+                  </div>
+               </details>
+               <details>
+                  <summary>
+                     <span class="faq-title"
+                        >Eleventh Class Past Year Papers</span
+                     >
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="expand-icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     >
+                        <path
+                           stroke="none"
+                           d="M0 0h24v24H0z"
+                           fill="none"
+                        ></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                     </svg>
+                  </summary>
+                  <div class="faq-content">
+                     <ul>
+                        <a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href="">
+                           <li>Pasr Paper Name</li>
+                        </a>
+                     </ul>
+                  </div>
+               </details>
+               <details>
+                  <summary>
+                     <span class="faq-title"
+                        >Twelfth Class Past Year Papers</span
+                     >
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="expand-icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     >
+                        <path
+                           stroke="none"
+                           d="M0 0h24v24H0z"
+                           fill="none"
+                        ></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                     </svg>
+                  </summary>
+                  <div class="faq-content">
+                     <ul>
+                        <a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href=""> <li>Pasr Paper Name</li> </a
+                        ><a href="">
+                           <li>Pasr Paper Name</li>
+                        </a>
+                     </ul>
+                  </div>
+               </details>
+            </div>
+            
+         </div>
+         <div class="blogSidebar">
+            <div class="recantBlogs">
+               <h3 class="he" style="margin-bottom: 16px">Recantly Blogs</h3>
+               <div class="links">
+                  <% Blogs.reverse().forEach(blog => { %>
+                  <a href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>"
+                     ><h3>
+                        <%= blog.blogTitle %>
+                        <span
+                           ><i class="ri-calendar-2-fill"></i> <%=
+                           blog.Date.toLocaleDateString() %></span
+                        >
+                     </h3></a
+                  >
+                  <% }) %>
+               </div>
+            </div>
+
+            <div class="tags">
+               <h3 class="he">Tages</h3>
+               <div class="tages">
+                  <button><a href="#">Eduction</a></button>
+                  <button><a href="#">Technolgy</a></button>
+                  <button><a href="#">Tip & Tricks</a></button>
+               </div>
+            </div>
+
+            <div class="connect">
+               <h3 class="he">Get In Touch</h3>
+               <div class="connecti">
+                  <a href="#"><i class="ri-whatsapp-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <% include ./partials/footer.ejs %>
+   </body>
+</html>

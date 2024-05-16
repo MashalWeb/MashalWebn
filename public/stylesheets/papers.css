@@ -1,0 +1,279 @@
+.faq-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    margin: 20px 0;
+    width: 100%;
+    padding: 20px;
+    border-radius: 1em;
+    background-color: #f8f8f8;
+}
+
+details {
+    font-size: 1rem;
+    width: 80%;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.034);
+}
+
+details:hover {
+    background: -webkit-linear-gradient(45deg, #d43fd415, #ff600b15);
+}
+
+details[open] {
+    background: -webkit-linear-gradient(45deg, #d43fd415, #ff600b15);
+}
+
+details[open] .faq-title {
+    color: #000000;
+}
+
+summary {
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    list-style: none;
+    padding: 1rem;
+    align-items: center;
+}
+
+summary svg {
+    stroke: var(--white);
+}
+
+details[open] summary svg {
+    transform: rotate(90deg);
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:focus {
+    outline: none;
+}
+
+.faq-title {
+    width: 90%;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-content {
+    padding: 0.2rem 1rem 1rem 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.faq-content ul li {
+    list-style: none;
+    margin-bottom: 17px;
+    background: #fff;
+    padding: 12px 7px;
+    text-decoration: none;
+}
+
+.faq-content ul a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+}
+
+.expand-icon {
+    pointer-events: none;
+    position: absolute;
+    right: 1rem;
+    transition: all 150ms ease-out;
+}
+
+.blogSidebar {
+    width: 400px;
+    box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.103);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px 0;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.he {
+    text-align: center;
+    font-size: 20px;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.recantBlogs .links {
+    margin-top: 5px;
+}
+
+.recantBlogs .links a {
+    text-decoration: none;
+    color: #000;
+}
+
+.recantBlogs .links a h3 {
+    text-align: start;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.recantBlogs .links a h3 span {
+    font-weight: 400;
+    font-size: 12px;
+    display: block;
+}
+
+.recantBlogs .links a h3 span i {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.tags .tages {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 10px;
+}
+
+.tags .tages button {
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    border: 1px solid #ff6918;
+    background: transparent;
+    border-radius: 5px;
+    transition: 0.3s ease;
+
+}
+
+.tags .tages button a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+.tags .tages button:hover {
+    background: #ff6918;
+}
+
+.tags .tages button:hover a {
+    color: #ffffff;
+}
+
+.connecti {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 10px;
+}
+
+.connecti a {
+    text-decoration: none;
+}
+
+.connecti a i {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 32px;
+}
+
+.subjectSec {
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    display: flex;
+    gap: 0 5px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.subjectSec .mainContent {
+    padding: 20px 10px;
+    flex-basis: 64%;
+    border-radius: 5px;
+}
+
+.subjectSec .mainContent .subjectText h1 {
+    font-weight: 700;
+    font-size: 27px;
+    padding-bottom: 5px;
+}
+
+.subjectSec .mainContent .subjectText h1 span {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #fda97b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.subjectSec .mainContent .subjectText p {
+    line-height: 21px;
+    font-size: 16.5px;
+    text-align: start;
+}
+
+
+@media only screen and (max-width: 1081px) {
+    .subjectSec {
+        gap: 30px 0;
+    }
+
+    .subjectSec .mainContent {
+        flex-basis: 99%;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .subjectSec {
+        padding: 5px 8px;
+        justify-content: center;
+    }
+
+    .subjectSec .mainContent {
+        padding: 20px 0;
+    }
+
+    details {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+}
+
+@media only screen and (max-width: 431px) {
+    .subjectSec .mainContent {
+        flex-basis: 100%;
+    }
+
+    .subjectSec .mainContent .subjectText h1 {
+        line-height: 28px;
+        font-size: 25px;
+    }
+
+    details {
+        font-size: 0.8rem;
+    }
+
+    .subjectSec .mainContent .subjectText p {
+        font-size: 15px;
+    }
+
+
+}

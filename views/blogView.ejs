@@ -9,6 +9,13 @@
 
       <section class="blogView">
          <div class="viewContent">
+            <% if (isAdmainLogin) { %>
+               <div class="edit">
+                  <a href="/Blog/<%= blog._id %>/edit" style="text-decoration: none;"><i class="ri-edit-fill"></i></a>
+               </div>
+            <% } else { %>
+               <div></div>
+            <% } %>
             <div class="html" style="display: none">
                <%= blog.blogContent %>
             </div>

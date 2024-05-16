@@ -273,11 +273,13 @@
     text-decoration: none;
 }
 
-.connecti a i {
+.connecti a i,
+.edit i {
     background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    font-size: 32px;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 830px) {

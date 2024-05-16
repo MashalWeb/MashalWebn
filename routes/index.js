@@ -8,7 +8,7 @@ const searchIndex = require("../Services/searchIndex");
 /* GET home page. */
 const uploadOnCloudinary = require("../Services/cloudinary");
 const blogsModel = require("../models/blogs.model");
-
+const adminModel = require("../models/admin.model");
 //-----------------------------------
 
 router.get("/", async function (req, res, next) {
@@ -77,6 +77,7 @@ router.get("/Blogs", async (req, res) => {
 });
 
 router.get("/Blogs/:blogId/:blogName", async function (req, res) {
+   const isAdmainLogin = req.cookies.admainTokan;
    const blog = await blogsModel.findOne({
       _id: req.params.blogId,
    });
@@ -89,6 +90,7 @@ router.get("/Blogs/:blogId/:blogName", async function (req, res) {
             title: `${blog.blogTitle} | Mashal Web`,
             user,
             Blogs,
+            isAdmainLogin,
          });
       }
    } catch (error) {
@@ -107,6 +109,34 @@ router.post("/Blog/:blogId/comment", async function (req, res) {
 
    await blog.save({ validateBeforeSave: true });
    res.redirect("back");
+});
+
+router.get("/Blog/:blogId/edit", async function (req, res) {
+   const blog = await blogsModel.findById(req.params.blogId);
+
+   if (!blog) return null;
+
+   res.render("blogEdit", { blog });
+});
+
+//
+router.post("/Blog/:blogId/edit", async function (req, res) {
+   const { title, blogCaption, innerHtml } = req.body;
+   const blog = await blogsModel.findById(req.params.blogId);
+   try {
+      if (!blog) throw new Error("Blog Is Not Found!!");
+
+      blog.blogTitle = title;
+      blog.blogCaption = blogCaption;
+      blog.blogContent = innerHtml;
+
+      await blog.save({ validateBeforeSave: true });
+
+      res.redirect("/Blogs");
+   } catch (error) {
+      console.log(error);
+      res.redirect("back");
+   }
 });
 //----------------------------------
 
@@ -251,7 +281,19 @@ router.post("/search/result", function (req, res) {
       searchWord,
    });
 });
+router.get("/All-Classes-Past-Year-Papers", async function (req, res) {
+   const user = req.user;
+   const Blogs = await blogsModel.find({});
+   res.render("selPaper", {
+      title: "All Classes Past Year Papers | Mashal Web",
+      user,
+      Blogs,
+   });
+});
 
+router.get("/AboutMe/Mashal-Horara", (req, res) => {
+   res.render("AboutMe", { title: "Mashal Horara" });
+});
 //------------------------------------------
 
 module.exports = router;

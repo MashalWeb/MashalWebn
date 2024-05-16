@@ -70,12 +70,8 @@
       <button class="h2Import">h2 Import</button>
       <button class="pImport">p Import</button>
 
-      <form
-         action="/admain/createBlog"
-         method="post"
-         enctype="multipart/form-data"
-      >
-         <h1>Create A Blog</h1>
+      <form action="/Blog/<%= blog._id %>/edit" method="post">
+         <h1>Edit A Blog</h1>
 
          <input
             type="text"
@@ -83,6 +79,7 @@
             id="title"
             placeholder="Blog Title"
             required="required"
+            value="<%= blog.blogTitle %>"
          />
          <input
             type="text"
@@ -90,58 +87,18 @@
             id="blogCaption"
             placeholder="Blog Caption"
             required="required"
+            value="<%= blog.blogCaption %>"
          />
          <textarea
             name="innerHtml"
             id="innerHtml"
             placeholder="content"
             required="required"
-         ></textarea>
-         <input
-            type="file"
-            name="blogImg"
-            id="blogImg"
-            aria-placeholder="blogImg"
-            required="required"
-         />
-         <span>Technlogy</span>
-         <input type="radio" name="Category" id="Category" value="Technlogy" />
-         <span>Eduction</span>
-         <input type="radio" name="Category" id="Category" value="Eduction" />
-         <span>Tips & Tricks</span>
-         <input
-            type="radio"
-            name="Category"
-            id="Category"
-            value="Tips & Tricks"
-         />
-
-         <button type="submit">Create</button>
+         >
+        <%= blog.blogContent %> 
+        </textarea
+         >
+         <button type="submit">Edit</button>
       </form>
-      <script>
-         let textAreaSnipt = document.querySelector("textarea");
-         textAreaSnipt.textContent = `          <h1> heading </h1>   
-         
-         <p> caption text </p>
-                           
-         <h2> sub-heading here </h2>
-         
-         <img src="" alt="" >
-         
-         <ol>
-            <li> steps here </li>
-            <li> steps here </li>
-            <li> steps here </li>   
-         </ol>`;
-         document.querySelector(".imgImport").addEventListener("click", () => {
-            textAreaSnipt.textContent += `  <img src="" alt="" >     `;
-         });
-         document.querySelector(".h2Import").addEventListener("click", () => {
-            textAreaSnipt.textContent += `  <h2>     </h2>     `;
-         });
-         document.querySelector(".pImport").addEventListener("click", () => {
-            textAreaSnipt.textContent += `  <p>     </p>     `;
-         });
-      </script>
    </body>
 </html>
