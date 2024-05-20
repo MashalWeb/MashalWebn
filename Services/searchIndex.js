@@ -40,4 +40,4 @@ const data = [
       url: "/Notes/KPK-Boards-Twelfth-Class-Notes",
    },
 ];
-module.exports = data
+export default data;

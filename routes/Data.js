@@ -5211,8 +5211,4 @@ const TwelfthClass = {
       },
    ],
 };
-module.exports = {
-   NinthClass,
-   TenthClass,
-   EleventhClass,
-};
+export { NinthClass, TenthClass, EleventhClass };

@@ -1,21 +1,32 @@
-const express = require("express");
-const adminModel = require("../models/admin.model");
-const { validateTokanAdmian } = require("../Services/authentication");
+//models
+
+import adminModel from "../models/admin.model.js";
+import userModel from "../models/user.model.js";
+import commentModel from "../models/comments.model.js";
+import blogsModel from "../models/blogs.model.js";
+
+// other files
+
+import express from "express";
+import { validateTokanAdmian } from "../Services/authentication.js";
+import upload from "./multer.js";
+
 const router = express.Router();
-const userModel = require("../models/user.model");
-const commentModel = require("../models/comments.model");
-const upload = require("./multer");
-const blogsModel = require("../models/blogs.model");
+
 router.get("/login", (req, res) => {
    res.render("admainLogin");
 });
 
-//post
+/*   ----- post request -----   */
+
 router.post("/admainLogin", async function (req, res) {
    const { email, password } = req.body;
+
    try {
       if (!email || !password) throw new Error("All Fields Required !!");
+
       const tokan = await adminModel.LoginAndGenTokan(email, password);
+
       res.cookie("admainTokan", tokan).redirect("/admain");
    } catch (error) {
       res.render("admainLogin", { error });
@@ -31,17 +42,20 @@ router.get("/", async function (req, res) {
    }
    try {
       const admainData = validateTokanAdmian(tokanCookieValue);
+
       const users = await userModel.find({});
+
       const comments = await commentModel.find({}).populate("commentBy");
+
       res.render("Admain", { admainData, users, comments });
    } catch (error) {
-      //
       console.log("error", error);
    }
 });
+
 router.get("/logout", function (req, res) {
-   console.log("hi");
    res.clearCookie("admainTokan");
+
    res.redirect("/admain/login");
 });
 
@@ -50,6 +64,7 @@ router.get("/comment/delete/:commentId", async (req, res) => {
       const response = await commentModel.findByIdAndDelete(
          req.params.commentId
       );
+
       res.redirect("/admain");
    } catch (error) {
       console.log("comment Error :: ", error);
@@ -70,6 +85,7 @@ router.get("/createBlogPage", (req, res) => {
 
 router.post("/createBlog", upload.single("blogImg"), async function (req, res) {
    const { title, innerHtml, Category, blogCaption } = req.body;
+
    let blogImg = req.file.filename;
 
    try {
@@ -86,9 +102,11 @@ router.post("/createBlog", upload.single("blogImg"), async function (req, res) {
       });
 
       console.log("created", response);
+
       res.redirect("/admain");
    } catch (error) {
       throw new Error(error);
    }
 });
-module.exports = router;
+
+export default router;

@@ -291,7 +291,7 @@
 }
 
 .wwp-left .wwp-content h1 {
-    font-size: 33px;
+    font-size: 35px;
     font-weight: 500;
     letter-spacing: 0.5px;
     background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
@@ -318,15 +318,15 @@
 .wwp-right::before {
     content: "";
     position: absolute;
-    background: linear-gradient(#bb37bb42, #fa7b36c2);
-    width: 30%;
-    height: 30%;
+    background: linear-gradient(#bb37bb56, #fa7b3686);
+    width: 60%;
+    height: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(60px);
 }
 
 .wwp-right .wwpBoxs {
@@ -336,16 +336,17 @@
 }
 
 .wwp-right .wwpBoxs .wwpBox {
-    background: #ffffff1c;
+    background: #ffffff67;
     padding: 15px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 0 10px;
-    box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.041);
+    box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.021);
 }
 
 .wwp-right .wwpBoxs .wwpBox .wwpBox-content h2 {
+    stroke: 1px;
     font-size: 20px;
     font-weight: 600;
     background: -webkit-linear-gradient(45deg, #bb37bbc0, #ff6d1e);
@@ -506,9 +507,9 @@ form button:hover {
     background: -webkit-linear-gradient(45deg, #BB37BB, #ff6a1a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 39px;
+    font-size: 35px;
     letter-spacing: 0.5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: 500;
 }
 
@@ -753,6 +754,7 @@ form button:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 .main-ser-box {
@@ -859,5 +861,268 @@ form button:hover {
 
     .services {
         padding: 20px 6px;
+    }
+}
+
+.quotes {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px 0;
+}
+
+.quotes h1 {
+    font-size: 32px;
+    font-weight: 500;
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quotes .quote-div {
+    width: 60%;
+    position: relative;
+}
+
+.quotes .quote-div .quote {
+    text-align: center;
+}
+
+.quotes .quote-div .quote q {
+    font-size: 21px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #000;
+    animation: qani 1s linear 0s 1;
+}
+
+.quote-div .auther p {
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.quote-div .auther .autherName {
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quotes button {
+    width: 300px;
+    padding: 9px 0;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #bb37bbf1, #fa7b36f1);
+    font-size: 16px;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 6px;
+}
+
+.quotes button:hover {
+    background: linear-gradient(45deg, #bb37bb, #fa7b36);
+}
+
+.quotes button:active {
+    scale: 0.95;
+}
+
+@keyframes qani {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    .quotes .quote-div {
+        width: 100%;
+    }
+
+    .quotes {
+        padding: 20px 8px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .quotes .quote-div .quote q {
+        font-size: 19px;
+    }
+}
+
+.mcqs {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 20px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    z-index: 1;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.mcqs::before {
+    content: "";
+    width: 430px;
+    height: 280px;
+    position: absolute;
+    bottom: 50px;
+    right: 18%;
+    background: linear-gradient(#86268657, #ff6d1ea1);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.mcqs-text {
+    border-radius: 10px;
+    padding: 40px 20px;
+    flex-basis: 40%;
+    background: rgba(255, 255, 255, 0.486);
+    box-shadow: 0 1px 10px 5px rgba(0, 0, 0, 0.021);
+}
+
+.mcqs-text h1 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 43px;
+    letter-spacing: 0.5px;
+    color: #000;
+}
+
+.mcqs-text h1 span {
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mcqs-text p {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 23px;
+    color: #000;
+}
+
+.mcqs-text button {
+    width: 200px;
+    margin-top: 15px;
+    padding: 9px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fa7b36);
+    font-size: 16px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.342);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.mcqs-text button:active {
+    scale: 0.9;
+}
+
+.mcqs .mcqs-img {
+
+    padding: 10px;
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.mcqs-img img {
+    filter: drop-shadow(0 3px 15px rgba(0, 0, 0, 0.226));
+    width: 95%;
+}
+
+@media only screen and (max-width: 774px) {
+    .mcqs {
+        gap: 20px 0;
+    }
+
+    .mcqs .mcqs-img {
+        flex-basis: 85%;
+        order: 2;
+    }
+
+    .mcqs::before {
+        bottom: 0;
+        top: 50px;
+        width: 430px;
+        height: 150px;
+        right: 35%;
+    }
+
+    .mcqs-text {
+        flex-basis: 95%;
+        order: 1;
+    }
+}
+
+@media only screen and (max-width: 488px) {
+    .mcqs-text {
+        flex-basis: 100%;
+        padding: 30px 15px;
+    }
+
+    .mcqs-text h1 {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .mcqs-text p {
+        font-size: 16px;
+    }
+
+    .mcqs .mcqs-img {
+        flex-basis: 100%;
+    }
+
+    .mcqs::before {
+        bottom: 0;
+        top: 50px;
+        width: 330px;
+        height: 150px;
+        right: 50px;
+        background: linear-gradient(#86268677, #ff6d1eb4);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .mcqs::before {
+        bottom: 0;
+        top: 50px;
+        width: 330px;
+        height: 150px;
+        right: 50px;
+        background: linear-gradient(#86268677, #ff6d1eb4);
+    }
+
+    .mcqs {
+        padding: 20px 8px;
+    }
+
+    .mcqs-img img {
+        width: 90%;
+    }
+
+    .mcqs-text {
+        padding: 30px 10px;
     }
 }

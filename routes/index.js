@@ -1,14 +1,27 @@
-var express = require("express");
-var router = express.Router();
-const userModel = require("../models/user.model");
-const commentModel = require("../models/comments.model");
-const upload = require("./multer");
-const checkForAuthCookie = require("../middleware/checkAuthCookie");
-const searchIndex = require("../Services/searchIndex");
-/* GET home page. */
-const uploadOnCloudinary = require("../Services/cloudinary");
-const blogsModel = require("../models/blogs.model");
-const adminModel = require("../models/admin.model");
+import express from "express";
+
+// models
+import User from "../models/user.model.js";
+import commentModel from "../models/comments.model.js";
+import blogsModel from "../models/blogs.model.js";
+
+// controllers
+
+import {
+   SignUp,
+   SignIn,
+   Logout,
+   uploadAvatar,
+   updateDetails,
+} from "../Controllers/user.controller.js";
+
+//other files
+import upload from "./multer.js";
+import checkForAuthCookie from "../middleware/checkAuthCookie.js";
+import searchIndex from "../Services/searchIndex.js";
+import Quotes from "../public/javascripts/quotes.js";
+
+const router = express.Router();
 //-----------------------------------
 
 router.get("/", async function (req, res, next) {
@@ -39,7 +52,7 @@ router.get("/login", function (req, res, next) {
 //-----------------------------------------
 
 router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
-   const user = await userModel.findOne({
+   const user = await User.findOne({
       username: req.user.username,
    });
    res.render("profile", { title: `${user.username} Profile`, user });
@@ -51,7 +64,7 @@ router.get(
    "/profileEdit",
    checkForAuthCookie("tokan"),
    async function (req, res, next) {
-      const user = await userModel.findOne({
+      const user = await User.findOne({
          username: req.user.username,
       });
       res.render("profileEdit", { title: "Edit Your Profile", user });
@@ -138,126 +151,23 @@ router.post("/Blog/:blogId/edit", async function (req, res) {
       res.redirect("back");
    }
 });
-//----------------------------------
 
-//-----------------------------------------
+/*  ------ post requests ------   */
 
-// post request
+//user routes
 
-//----------------------------------------
+router.post("/register", SignUp);
+router.post("/login", SignIn);
+router.get("/logout", Logout);
+router.post("/upload", upload.single("image"), uploadAvatar);
+router.post("/updateDetails", updateDetails);
 
-router.post("/register", async function (req, res) {
-   const { username, email, password } = req.body;
-
-   try {
-      if (!username || !email || !password) {
-         console.log("All Fields require!!");
-         return null;
-      }
-      const exitedUser = await userModel.findOne({ email: email });
-
-      if (exitedUser) throw new Error("User Alerady Exist With this email");
-
-      const CreatedUser = await userModel.create({
-         username,
-         email,
-         password,
-      });
-
-      res.redirect("/login");
-      //
-   } catch (error) {
-      let user = req.user;
-
-      console.log("register error", error.message);
-      res.render("register", {
-         user,
-         title: "SignUp | Register",
-         error: "User with this email is exist",
-      });
-   }
-});
-
-//------------------------------------------
-
-router.post("/login", async function (req, res) {
-   const { email, password } = req.body;
-
-   try {
-      if (!email || !password) {
-         console.log("All fields are required");
-         return null;
-      }
-
-      const tokan = await userModel.passwordMatchAndGenerateTokan(
-         email,
-         password
-      );
-      res.cookie("tokan", tokan).redirect("/");
-   } catch (error) {
-      console.log("Login Error ::", error.message);
-
-      const user = req.user;
-
-      res.render("login", {
-         error,
-         title: "Login | Sigin",
-         user,
-      });
-   }
-});
-//----------------------------------------
-
-router.get("/logout", function (req, res) {
-   res.clearCookie("tokan");
-   res.redirect("/login");
-});
-
-//----------------------------------------
-
-router.post("/upload", upload.single("image"), async function (req, res) {
-   try {
-      const localFilePath = req.file.path;
-      if (!localFilePath) {
-         console.log("No Files is given");
-      }
-      console.log(localFilePath);
-
-      // for deployment
-
-      // const avatar = await uploadOnCloudinary(localFilePath);
-      await userModel.findByIdAndUpdate(req.user._id, {
-         avatar: req.file.filename, //avatar.url
-      });
-      res.redirect("/profileEdit");
-   } catch (error) {
-      console.log("ERROR in /upload route:: ", error);
-   }
-});
-
-//------------------------------------------
-
-router.post("/updateDetails", async function (req, res) {
-   let user = await userModel.findOne({ username: req.user.username });
-
-   try {
-      await user.updateOne({
-         bio: req.body.bio,
-         role: req.body.role,
-      });
-
-      res.redirect(`/profile`);
-   } catch (error) {
-      console.log("no updates: ", error.message);
-   }
-});
-
-//------------------------------------------
 router.post("/comment", async function (req, res) {
-   var user = await userModel.findOne({
+   var user = await User.findOne({
       username: req.user.username,
    });
    var commentText = req.body.commentText;
+
    const comment = await commentModel.create({
       commentText: commentText,
       commentBy: user,
@@ -273,7 +183,7 @@ router.post("/search/result", function (req, res) {
    const filterresult = searchIndex.filter((obj) =>
       obj.name.includes(searchWord)
    );
-   console.log(filterresult);
+
    res.render("searchResult", {
       title: "Search Result",
       user,
@@ -283,7 +193,9 @@ router.post("/search/result", function (req, res) {
 });
 router.get("/All-Classes-Past-Year-Papers", async function (req, res) {
    const user = req.user;
+
    const Blogs = await blogsModel.find({});
+
    res.render("selPaper", {
       title: "All Classes Past Year Papers | Mashal Web",
       user,
@@ -292,8 +204,18 @@ router.get("/All-Classes-Past-Year-Papers", async function (req, res) {
 });
 
 router.get("/AboutMe/Mashal-Horara", (req, res) => {
-   res.render("AboutMe", { title: "Mashal Horara" });
+   const user = req.user;
+
+   res.render("A&C", { title: "Mashal Horara", user });
+});
+
+router.get("/quotes/generate", (req, res) => {
+   const randQuote = Math.floor(Math.random() * Quotes.length);
+
+   res.json({
+      data: Quotes[randQuote],
+   });
 });
 //------------------------------------------
 
-module.exports = router;
+export default router;

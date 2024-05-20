@@ -1,4 +1,4 @@
-const { validateTokan } = require("../Services/authentication");
+import { validateTokan } from "../Services/authentication.js";
 
 function checkForAuthCookie(cookieName) {
    return (req, res, next) => {
@@ -17,4 +17,4 @@ function checkForAuthCookie(cookieName) {
    };
 }
 
-module.exports = checkForAuthCookie;
+export default checkForAuthCookie;

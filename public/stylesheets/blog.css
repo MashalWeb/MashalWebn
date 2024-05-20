@@ -94,6 +94,7 @@
     border-top-right-radius: 10px;
     background: linear-gradient(45deg, #bb37bb, #ff6918);
     position: relative;
+    z-index: 2;
 }
 
 .blogBox .blogImg::before {
@@ -103,11 +104,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+    z-index: -1;
 }
 
 .blogBox .blogImg img {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
     object-position: center;
 
@@ -133,7 +135,6 @@
     color: #000;
     line-height: 19px;
     letter-spacing: 0.2px;
-
 }
 
 .blogContent button {
@@ -150,18 +151,6 @@
     text-decoration: none;
     color: #fff;
 }
-
-/* .blogBox .blogContent .content h2 {
-    font-weight: 550;
-    font-size: 20px;
-    padding: 5px 0;
-}
-
-.blogBox .blogContent .content h3 {
-    font-weight: 550;
-    font-size: 17px;
-    padding: 3px 0;
-} */
 
 .blogBox .blogDeatils {
 

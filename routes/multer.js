@@ -1,15 +1,13 @@
-const multer = require("multer");
-const path = require("path");
-const crypto = require("crypto");
+import multer from "multer";
 
 const storage = multer.diskStorage({
    destination: function (req, file, cb) {
       cb(null, "./public/images/uploads");
    },
    filename: function (req, file, cb) {
-      cb(null, file.originalname);
+      cb(null, `${Date.now().toString()}-${file.originalname.trim()}`);
    },
 });
 
 const upload = multer({ storage: storage });
-module.exports = upload;
+export default upload;

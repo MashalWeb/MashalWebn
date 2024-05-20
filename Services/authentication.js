@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 const SECRET_KEY = "$uperMashal";
 
 function CreateTokensForUser(user) {
@@ -37,7 +37,7 @@ function validateTokanAdmian(tokan) {
    return payload;
 }
 
-module.exports = {
+export {
    CreateTokensForUser,
    validateTokan,
    CreateTokensForAdmain,

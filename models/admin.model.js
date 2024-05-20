@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
-const { randomBytes, createHmac } = require("crypto");
-const { CreateTokensForAdmain } = require("../Services/authentication");
+import mongoose from "mongoose";
+import { randomBytes, createHmac } from "crypto";
+import { CreateTokensForAdmain } from "../Services/authentication.js";
+
 const admainSchema = new mongoose.Schema({
    aEmail: String,
    salt: String,
@@ -9,13 +10,19 @@ const admainSchema = new mongoose.Schema({
 
 admainSchema.pre("save", function (next) {
    const admain = this;
+
    if (!admain.isModified("aPassword")) return;
+
    const salt = randomBytes(10).toString();
+
    const hashPassword = createHmac("sha256", salt)
       .update(admain.aPassword)
       .digest("hex");
+
    this.salt = salt;
+
    this.aPassword = hashPassword;
+
    next();
 });
 
@@ -23,6 +30,7 @@ admainSchema.pre("save", function (next) {
 
 admainSchema.static("LoginAndGenTokan", async function (email, password) {
    const admain = await this.findOne({ aEmail: email });
+
    if (!admain) throw new Error("No Admain With Email !!");
 
    const salt = admain.salt;
@@ -40,4 +48,4 @@ admainSchema.static("LoginAndGenTokan", async function (email, password) {
 });
 
 //
-module.exports = mongoose.model("admain", admainSchema);
+export default mongoose.model("admain", admainSchema);

@@ -250,7 +250,7 @@
          <div class="a-main-div">
             <div class="a-left">
                <div class="a-headings">
-                  <h1>About Us</h1>
+                  <h1><span>About</span> Us</h1>
                   <h2>CEO: MASHAL HURARA</h2>
                </div>
                <div class="a-content">
@@ -274,6 +274,55 @@
             </div>
          </div>
       </section>
+
+      <section class="mcqs">
+         <div class="mcqs-img">
+            <img src="/images/MCQS-Img.png" alt="MCQs Image" />
+         </div>
+         <div class="mcqs-text">
+            <h1>
+               Solved Challanging<span> MCQs</span> With <span>MashalWeb</span>
+            </h1>
+            <p>
+               Solved MCQs based on different topics like Eduction & Technology
+            </p>
+            <a href="#" title="view MCQs"> <button>View MCQs</button></a>
+         </div>
+      </section>
+
+      <section class="quotes">
+         <h1>Random Quotes</h1>
+         <div class="quote-div">
+            <div class="quote">
+               <q> </q>
+            </div>
+            <div class="auther">
+               <p>By: <span class="autherName"></span></p>
+            </div>
+         </div>
+         <button class="ge">Get A Quote</button>
+      </section>
+      <script>
+         const quote = document.querySelector(".quote q");
+         const auther = document.querySelector(".autherName");
+
+         async function getQuote() {
+            fetch("/quotes/generate")
+               .then(async (res) => {
+                  const data = await res.json();
+
+                  quote.textContent = data.data.content;
+                  auther.textContent = data.data.author;
+               })
+               .catch((err) => {
+                  console.log("ERRR ::", err);
+               });
+         }
+         getQuote();
+
+         document.querySelector(".ge").addEventListener("click", getQuote);
+      </script>
+
       <% include ./partials/footer.ejs %>
    </body>
 </html>
