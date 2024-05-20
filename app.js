@@ -1,17 +1,20 @@
 import dotenv from "dotenv";
 dotenv.config();
+
 import http from "http";
 import createError from "http-errors";
+import debug from "debug";
+import logger from "morgan";
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
-import logger from "morgan";
+
 import indexRouter from "./routes/index.js";
 import notesRouter from "./routes/notesRouter.js";
 import admainRouter from "./routes/admain.route.js";
 import checkForAuthCookie from "./middleware/checkAuthCookie.js";
 import connectMongoDB from "./DB/mongoDB.js";
-import debug from "debug";
+
 const app = express();
 
 // mongoDB Connection
