@@ -12,7 +12,7 @@ import {
    SignIn,
    Logout,
    uploadAvatar,
-   updateDetails,
+   updateInfo,
 } from "../Controllers/user.controller.js";
 
 //other files
@@ -25,6 +25,7 @@ const router = express.Router();
 //-----------------------------------
 
 router.get("/", async function (req, res, next) {
+   console.log("hi");
    const user = req.user;
    res.render("index", {
       title: "Mashal Web",
@@ -53,8 +54,9 @@ router.get("/login", function (req, res, next) {
 
 router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
    const user = await User.findOne({
-      username: req.user.username,
+      _id: req.user._id,
    });
+   console.log(user);
    res.render("profile", { title: `${user.username} Profile`, user });
 });
 
@@ -65,7 +67,7 @@ router.get(
    checkForAuthCookie("tokan"),
    async function (req, res, next) {
       const user = await User.findOne({
-         username: req.user.username,
+         _id: req.user._id,
       });
       res.render("profileEdit", { title: "Edit Your Profile", user });
    }
@@ -160,11 +162,11 @@ router.post("/register", SignUp);
 router.post("/login", SignIn);
 router.get("/logout", Logout);
 router.post("/upload", upload.single("image"), uploadAvatar);
-router.post("/updateDetails", updateDetails);
+router.post("/updateInfo", updateInfo);
 
 router.post("/comment", async function (req, res) {
    var user = await User.findOne({
-      username: req.user.username,
+      _id: req.user._id,
    });
    var commentText = req.body.commentText;
 

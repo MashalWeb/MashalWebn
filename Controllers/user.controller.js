@@ -1,3 +1,4 @@
+import { CreateTokensForUser } from "../Services/authentication.js";
 import uploadOnCloudinary from "../Services/cloudinary.js";
 import User from "../models/user.model.js";
 
@@ -89,17 +90,25 @@ export const uploadAvatar = async function (req, res) {
    }
 };
 
-export const updateDetails = async function (req, res) {
-   let user = await User.findOne({ username: req.user.username });
-
+export const updateInfo = async function (req, res) {
+   const { username, email, bio, role } = req.body;
+   const userID = req.user._id;
    try {
-      await user.updateOne({
-         bio: req.body.bio,
-         role: req.body.role,
-      });
+      if (!userID) throw new Error("No User Found");
 
-      res.redirect(`/profile`);
+      const updateUser = await User.findByIdAndUpdate(
+         { _id: userID },
+         {
+            username,
+            email,
+            role,
+            bio,
+         }
+      );
+      const tokan = CreateTokensForUser(updateUser);
+
+      res.cookie("tokan", tokan).redirect("/profile");
    } catch (error) {
-      console.log("no updates: ", error.message);
+      console.log("ERROR_INFO_UPDATE :: ", error);
    }
 };

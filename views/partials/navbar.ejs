@@ -10,7 +10,9 @@
 <header>
    <nav class="">
       <div class="logo hidden">
-         <img src="/images/mw logo.png" alt="" />
+         <a href="/">
+            <img src="/images/mw logo.png" alt="" style="cursor: pointer" />
+         </a>
       </div>
       <div class="items hidden">
          <ul>
@@ -51,9 +53,7 @@
       </div>
       <% if (user) {%>
       <a href="/profile"
-         ><button class="pdb">
-            <small>Hi,<%= user.username %></small>
-         </button></a
+         ><button class="pdb"><%= user.username.split("")[0] %></button></a
       >
       <% } else{ %>
       <a href="/login" class="asd">

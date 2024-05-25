@@ -550,3 +550,165 @@
         padding: 7px 0;
     }
 }
+
+.profile-edit {
+    margin-top: 100px;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px 0;
+    align-items: center;
+}
+
+.profile-edit .image-edit {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-edit .image-edit .image-div {
+    position: relative;
+}
+
+.profile-edit .image-edit img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+
+}
+
+.profile-edit .image-edit .editIco {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 17px;
+    right: 30px;
+    border-radius: 50%;
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fda97b);
+}
+
+.profile-edit .info-edit {
+    width: 70%;
+    background: #f8f8f8;
+    padding: 20px 10px;
+    border-radius: 20px;
+
+}
+
+.profile-edit .info-edit form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-edit .info-edit form input {
+    margin-bottom: 18px;
+    border: none;
+    outline: none;
+    background: #fff;
+    padding: 15px 7px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.031);
+    font-size: 16px;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+.profile-edit .info-edit form input:focus {
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.081);
+}
+
+.profile-edit .info-edit form label {
+    font-size: 16px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    color: #4e4e4e;
+    font-weight: 500;
+}
+
+.profile-edit .info-edit form textarea {
+    margin-bottom: 18px;
+    border: none;
+    outline: none;
+    background: #fff;
+    padding: 10px 7px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.031);
+    font-size: 16px;
+    color: #000;
+    transition: 0.3s ease;
+    height: 200px;
+    resize: none;
+}
+
+.profile-edit .info-edit form textarea:focus {
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.081);
+}
+
+.profile-edit .info-edit form select {
+    padding: 12px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.031);
+    font-size: 16px;
+    transition: 0.3s ease;
+    color: #000;
+    margin-bottom: 18px;
+}
+
+.profile-edit .info-edit form select:focus {
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.081);
+}
+
+.profile-edit .info-edit form button {
+    margin: 18px 0;
+    border: none;
+    outline: none;
+    background: -webkit-linear-gradient(45deg, #BB37BB, #fda97b);
+    padding: 15px 7px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.031);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.09);
+    cursor: pointer;
+}
+
+.profile-edit .info-edit form button:hover {
+    background: -webkit-linear-gradient(45deg, #fda97b, #BB37BB);
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-edit .image-edit {
+        width: 100%;
+    }
+
+    .profile-edit .info-edit {
+        width: 100%;
+    }
+
+    .profile-edit {
+        padding: 20px 10px;
+    }
+
+    .profile-edit .info-edit form input {
+        padding: 12px 7px;
+        font-size: 15px;
+    }
+
+    .profile-edit .info-edit form label {
+        font-size: 15px;
+    }
+
+    .profile-edit .info-edit form textarea {
+        font-size: 15px;
+    }
+}

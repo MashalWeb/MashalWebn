@@ -6,75 +6,58 @@
    </head>
    <body>
       <% include ./partials/navbar.ejs %>
-      <section class="profile">
-         <div class="welMsg">
-            <h1>Welcome <span>Mr.<%= user.username %></span></h1>
-            <h3 style="text-align: center">Edit Your Profile</h3>
-         </div>
-         <div class="form">
-            <div class="formLeft">
-               <form
-                  action="/upload"
-                  method="post"
-                  id="fileform"
-                  enctype="multipart/form-data"
-                  style="display: none"
-               >
-                  <input type="file" name="image" id="profileImage" hidden />
-               </form>
 
-               <div class="imageBox">
-                  <img
-                     class="w-full h-full object-cover"
-                     src="/images/uploads/<%= user.avatar %>"
-                     alt=""
-                  />
-                  <div class="editIco">
-                     <i class="ri-edit-circle-fill"></i>
-                  </div>
-               </div>
-               <div class="inputfields">
-                  <input
-                     type="text"
-                     value="Name : <%= user.username %>"
-                     disabled
-                  />
-               </div>
-               <div class="inputfields">
-                  <input
-                     type="email"
-                     value="Email : <%= user.email %>"
-                     disabled
-                  />
-               </div>
+      <section class="profile-edit">
+         <div class="errorShow">
+            <% if (locals.error) { %>
+            <div><h1><%= error.message %></h1></div>
+            <% } %>
+         </div>
+         <div class="image-edit">
+            <form
+               action="/upload"
+               method="post"
+               id="fileform"
+               enctype="multipart/form-data"
+               style="display: none"
+            >
+               <input type="file" name="image" id="profileImage" hidden />
+            </form>
+            <div class="image-div">
+               <img
+                  src="/images/uploads/<%= user.avatar %>"
+                  alt="profileImage"
+               />
+               <i class="ri-edit-circle-fill editIco"></i>
             </div>
-            <form class="formRight" action="/updateDetails" method="post">
-               <div class="inputfields">
-                  <select name="role">
-                     <option value="Student">Student</option>
-                     <option value="Teacher">Teacher</option>
-                     <option value="individual">individual</option>
-                  </select>
-               </div>
-               <div class="inputfields">
-                  <textarea
-                     name="bio"
-                     id="bio"
-                     cols="30"
-                     rows="7"
-                     placeholder="Write About Yourself"
-                  >
+         </div>
+         <div class="info-edit">
+            <form action="/updateInfo" method="post">
+               <label for="userName">Name</label>
+               <input
+                  type="text"
+                  name="username"
+                  id="userName"
+                  value="<%= user.username %>"
+               />
+               <label for="email">Email</label>
+               <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  value="<%= user.email %>"
+               />
+               <label for="about">About</label>
+               <textarea name="bio" id="about" cols="30" rows="10">
 <%= user.bio %></textarea
-                  >
-               </div>
-               <div class="inputfields">
-                  <input
-                     type="submit"
-                     name=""
-                     id="updateDetails"
-                     value="Update Details"
-                  />
-               </div>
+               >
+               <label for="">Your Role</label>
+               <select name="role" id="role">
+                  <option value="Student">Student</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Indiviual">Indiviual</option>
+               </select>
+               <button type="submit">Update</button>
             </form>
          </div>
       </section>

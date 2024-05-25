@@ -153,6 +153,17 @@ nav .items ul li {
   margin-top: -3px;
 }
 
+@media only screen and (max-width: 400px) {
+  .acc {
+    width: 40px;
+    height: 40px;
+  }
+
+  .acc small {
+    display: none;
+  }
+}
+
 .asd {
   text-decoration: none;
 }
@@ -319,18 +330,33 @@ nav .items ul li:hover a {
   cursor: pointer;
 }
 
-.detss .pdb {
+.pdb {
 
-  padding: 9px 40px;
+  width: 50px;
+  height: 50px;
   color: #fff;
   letter-spacing: 1px;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 400;
   border: none;
   outline: none;
   border-radius: 10px;
-  background: linear-gradient(45deg, #ff00ff5b, #ff5900a4);
+  background: -webkit-linear-gradient(45deg, #bb37bbce, #ff6d1ed5);
   text-transform: capitalize;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
+.pdb:hover {
+  background: -webkit-linear-gradient(45deg, #bb37bbf1, #ff6d1e);
+}
+
+@media only screen and (max-width: 400px) {
+  .pdb {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media only screen and (max-width: 915px) {
