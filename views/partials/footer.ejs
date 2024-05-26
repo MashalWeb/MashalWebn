@@ -1,6 +1,6 @@
 <style>
    .info_section {
-      background: #fafafa;
+      background: #fcfcfc;
       color: #000000;
       padding: 45px 0 15px 0;
       position: relative;
@@ -24,7 +24,26 @@
       font-weight: 600;
       margin-bottom: 20px;
    }
-
+   .row {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 0 30px;
+      flex-wrap: wrap;
+   }
+   .row > div {
+      flex-basis: 21%;
+   }
+   @media only screen and (max-width: 800px) {
+      .row > div {
+         flex-basis: 91%;
+      }
+   }
+   @media only screen and (max-width: 400px) {
+      .row > div {
+         flex-basis: 97%;
+      }
+   }
    .info_section .info_col {
       margin-bottom: 30px;
    }
