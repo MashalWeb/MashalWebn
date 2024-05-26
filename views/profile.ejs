@@ -91,6 +91,32 @@
                   </a>
                </div>
             </div>
+            <div class="latest-updates">
+               <div class="lu-heading">
+                  <h1>Latest Blogs</h1>
+               </div>
+               <div class="lu-main">
+                 <% blogs.forEach(blog => { %>
+                  <div class="lu-box">
+                     <div class="lu-box-img">
+                        <img src="/images/uploads/<%= blog.blogImg %>" alt="" />
+                     </div>
+                     <div class="lu-box-content">
+                        <h2><%= blog.blogTitle %></h2>
+                        <p>
+                           <%= blog.blogCaption %>
+                        </p>
+                        <a href="/Blogs/<%= blog._id%>/<%= blog.blogTitle.split(" ").join("-") %>"
+                           ><button>
+                              See More
+                              <i class="ri-arrow-right-fill"></i></button
+                        ></a>
+                     </div>
+                  </div>
+                 <% }) %>
+                  
+               </div>
+            </div>
          </div>
       </section>
       <script>

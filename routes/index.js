@@ -56,8 +56,10 @@ router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
    const user = await User.findOne({
       _id: req.user._id,
    });
+   const blogs = await blogsModel.find({});
+   console.log(blogs);
    console.log(user);
-   res.render("profile", { title: `${user.username} Profile`, user });
+   res.render("profile", { title: `${user.username} Profile`, user, blogs });
 });
 
 //------------------------------------------

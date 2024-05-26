@@ -712,3 +712,101 @@
         font-size: 15px;
     }
 }
+
+.latest-updates {
+    margin: 0 3px;
+    margin-top: 35px;
+    background: #fff;
+    width: 100%;
+    border-radius: 21px;
+    box-shadow: 0 3px 20px 4px rgba(0, 0, 0, 0.09);
+    padding: 10px;
+    position: relative;
+}
+
+.lu-heading h1 {
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.lu-main {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+}
+
+.lu-main .lu-box {
+    padding: 0 13px;
+    padding-left: 0;
+    background: #fff;
+    box-shadow: 0 3px 20px 4px rgba(0, 0, 0, 0.09);
+    border-radius: 12px;
+    display: flex;
+    gap: 0 10px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 150px;
+}
+
+.lu-box-img {
+    width: 250px;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+}
+
+.lu-box-img img {
+    z-index: 2;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.lu-box-content h2 {
+    font-weight: 550;
+    font-size: 20px;
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lu-box-content p {
+    font-size: 15px;
+    color: #000;
+    line-height: 21px;
+    margin: 6px 0;
+}
+
+.lu-box-content button {
+    margin-top: 8px;
+    width: 100px;
+    padding: 7px 0;
+    border: none;
+    outline: none;
+    background: -webkit-linear-gradient(45deg, #bb37bbef, #ff6918ef);
+    color: #fff;
+    border-radius: 44px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.lu-box-content button:hover {
+    background: -webkit-linear-gradient(45deg, #bb37bb, #ff6918);
+}
+
+.lu-box-content button:active {
+    scale: 0.9;
+}
