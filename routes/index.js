@@ -25,7 +25,6 @@ const router = express.Router();
 //-----------------------------------
 
 router.get("/", async function (req, res, next) {
-   console.log("hi");
    const user = req.user;
    res.render("index", {
       title: "Mashal Web",
@@ -38,6 +37,7 @@ router.get("/", async function (req, res, next) {
 
 router.get("/register", function (req, res, next) {
    const user = req.user;
+
    res.render("register", { title: "SignUp | Register", user }); //vbxcv
 });
 
@@ -57,8 +57,7 @@ router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
       _id: req.user._id,
    });
    const blogs = await blogsModel.find({});
-   console.log(blogs);
-   console.log(user);
+
    res.render("profile", { title: `${user.username} Profile`, user, blogs });
 });
 
@@ -124,7 +123,7 @@ router.post("/Blog/:blogId/comment", async function (req, res) {
       commentEmail: commentEmail,
    });
 
-   await blog.save({ validateBeforeSave: true });
+   await blog.save({ validateBeforeSave: false });
    res.redirect("back");
 });
 
@@ -172,7 +171,7 @@ router.post("/comment", async function (req, res) {
    });
    var commentText = req.body.commentText;
 
-   const comment = await commentModel.create({
+   await commentModel.create({
       commentText: commentText,
       commentBy: user,
    });

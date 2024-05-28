@@ -1,7 +1,7 @@
 import { validateTokan } from "../Services/authentication.js";
 
 function checkForAuthCookie(cookieName) {
-   return (req, res, next) => {
+   return (req, _, next) => {
       const tokanCookieValue = req.cookies[cookieName];
       if (!tokanCookieValue) {
          next();

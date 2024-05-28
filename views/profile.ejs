@@ -16,7 +16,7 @@
                   <i class="ri-account-box-fill"></i>
                   <h5>Profile</h5>
                </a>
-               <a href="#" class="sidebarElem">
+               <a href="#post" class="sidebarElem">
                   <i class="ri-news-fill"></i>
                   <h5>Posts</h5>
                </a>
@@ -62,7 +62,7 @@
                            <i class="ri-account-box-fill"></i>
                            <h5>Profile</h5>
                         </a>
-                        <a href="#" class="sidebarElem">
+                        <a href="#post" class="sidebarElem">
                            <i class="ri-news-fill"></i>
                            <h5>Posts</h5>
                         </a>
@@ -91,16 +91,13 @@
                   </a>
                </div>
             </div>
-            <div class="latest-updates">
+            <div class="latest-updates" id="post">
                <div class="lu-heading">
                   <h1>Latest Blogs</h1>
                </div>
-               <div class="lu-main">
-                 <% blogs.forEach(blog => { %>
+               <div class="lu-main" id="">
+                 <% blogs.reverse().forEach(blog => { %>
                   <div class="lu-box">
-                     <div class="lu-box-img">
-                        <img src="/images/uploads/<%= blog.blogImg %>" alt="" />
-                     </div>
                      <div class="lu-box-content">
                         <h2><%= blog.blogTitle %></h2>
                         <p>

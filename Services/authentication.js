@@ -7,9 +7,6 @@ function CreateTokensForUser(user) {
       _id: user._id,
       email: user.email,
       username: user.username,
-      avatar: user.avatar,
-      role: user.role,
-      bio: user.bio,
    };
    const tokan = jwt.sign(payload, SECRET_KEY);
    return tokan;
