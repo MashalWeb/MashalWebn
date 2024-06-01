@@ -1,7 +1,6 @@
 import { CreateTokensForUser } from "../Services/authentication.js";
-import uploadOnCloudinary from "../Services/cloudinary.js";
+// import uploadOnCloudinary from "../Services/cloudinary.js";
 import User from "../models/user.model.js";
-
 export const SignUp = async function (req, res) {
    const { username, email, password } = req.body;
 
@@ -72,7 +71,7 @@ export const uploadAvatar = async function (req, res) {
          console.log("No Files is given");
       }
 
-      console.log(localFilePath);
+      //console.log(localFilePath);
 
       // for deveployment
 

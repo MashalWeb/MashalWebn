@@ -135,8 +135,8 @@
 .boxSecs .noteBox {
     cursor: pointer;
     width: 250px;
-    height: 180px;
-    box-shadow: 0 4px 10px 4px rgba(255, 153, 58, 0.192);
+    height: auto;
+    box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.044);
     display: flex;
     margin: 8px 0;
     border-radius: 10px;
@@ -145,31 +145,28 @@
     position: relative;
     justify-content: center;
     transition: 0.3s;
+    padding: 30px 20px;
 }
 
 .boxSecs .noteBox:hover {
-    box-shadow: 0 4px 10px 4px rgba(255, 153, 58, 0.452);
+    box-shadow: 0 3px 15px 5px rgba(0, 0, 0, 0.084);
 }
 
 .boxSecs .noteBox:active {
     scale: 0.9;
 }
 
-.boxSecs .noteBox h3 {
-    font-weight: 700;
-    margin: 5px 0;
-    transition: 0.5s ease;
-    color: #000000;
-    font-size: 21px;
+.boxSecs .noteBox .box-img {
+    margin-top: 5px;
+    width: 100%;
+
 }
 
-.boxSecs .noteBox h3 span {
-    color: #ff8543;
-}
-
-.boxSecs .noteBox i {
-    color: #ff5900;
-    font-size: 100px;
+.boxSecs .noteBox .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 @media only screen and (max-width: 546px) {
@@ -177,39 +174,30 @@
         gap: 0 15px;
     }
 
+    .boxSecs .noteBox .box-img {
+        width: 90%;
+    }
+
     .boxSecs .noteBox {
-        width: 360px;
-        height: 150px;
-        padding: 10px;
-    }
-
-    .boxSecs .noteBox i {
-        font-size: 19px;
-    }
-
-    .boxSecs .noteBox i {
-        color: #ff5900;
-        font-size: 70px;
+        width: 350px;
+        height: auto;
+        padding: 20px;
     }
 }
 
 @media only screen and (max-width: 422px) {
     .boxSecs {
-        gap: 0 0;
+        gap: 10px 0;
+    }
+
+    .boxSecs .noteBox .box-img {
+        width: 90%;
     }
 
     .boxSecs .noteBox {
-        width: 330px;
-        height: 130px;
-    }
-
-    .boxSecs .noteBox i {
-        color: #ff5900;
-        font-size: 50px;
-    }
-
-    .boxSecs .noteBox h3 {
-        font-size: 18px;
+        width: 300px;
+        height: auto;
+        padding: 30px 20px;
     }
 
     .jsAddText {

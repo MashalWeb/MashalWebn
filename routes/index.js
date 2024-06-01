@@ -23,7 +23,6 @@ import Quotes from "../public/javascripts/quotes.js";
 
 const router = express.Router();
 //-----------------------------------
-
 router.get("/", async function (req, res, next) {
    const user = req.user;
    res.render("index", {
@@ -31,9 +30,6 @@ router.get("/", async function (req, res, next) {
       user,
    });
 });
-// ----------------------------------
-
-//-----------------------------------
 
 router.get("/register", function (req, res, next) {
    const user = req.user;
@@ -41,16 +37,10 @@ router.get("/register", function (req, res, next) {
    res.render("register", { title: "SignUp | Register", user }); //vbxcv
 });
 
-//---------------------------------------
-
 router.get("/login", function (req, res, next) {
    const user = req.user;
    res.render("login", { title: "Login | SignUp", user }); //
 });
-
-//----------------------------------------
-
-//-----------------------------------------
 
 router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
    const user = await User.findOne({
@@ -60,9 +50,6 @@ router.get("/profile", checkForAuthCookie("tokan"), async function (req, res) {
 
    res.render("profile", { title: `${user.username} Profile`, user, blogs });
 });
-
-//------------------------------------------
-
 router.get(
    "/profileEdit",
    checkForAuthCookie("tokan"),
@@ -74,16 +61,12 @@ router.get(
    }
 );
 
-//-------------
-
 router.get("/Notes", async function (req, res, next) {
    const user = req.user;
    const comments = await commentModel.find({}).populate("commentBy");
 
    res.render("Notes", { title: "Chapter Wise Notes", comments, user });
 });
-
-//------------------
 
 router.get("/Blogs", async (req, res) => {
    const user = req.user;
@@ -135,26 +118,6 @@ router.get("/Blog/:blogId/edit", async function (req, res) {
    res.render("blogEdit", { blog });
 });
 
-//
-router.post("/Blog/:blogId/edit", async function (req, res) {
-   const { title, blogCaption, innerHtml } = req.body;
-   const blog = await blogsModel.findById(req.params.blogId);
-   try {
-      if (!blog) throw new Error("Blog Is Not Found!!");
-
-      blog.blogTitle = title;
-      blog.blogCaption = blogCaption;
-      blog.blogContent = innerHtml;
-
-      await blog.save({ validateBeforeSave: true });
-
-      res.redirect("/Blogs");
-   } catch (error) {
-      console.log(error);
-      res.redirect("back");
-   }
-});
-
 /*  ------ post requests ------   */
 
 //user routes
@@ -194,6 +157,26 @@ router.post("/search/result", function (req, res) {
       searchWord,
    });
 });
+
+router.post("/Blog/:blogId/edit", async function (req, res) {
+   const { title, blogCaption, innerHtml } = req.body;
+   const blog = await blogsModel.findById(req.params.blogId);
+   try {
+      if (!blog) throw new Error("Blog Is Not Found!!");
+
+      blog.blogTitle = title;
+      blog.blogCaption = blogCaption;
+      blog.blogContent = innerHtml;
+
+      await blog.save({ validateBeforeSave: true });
+
+      res.redirect("/Blogs");
+   } catch (error) {
+      console.log(error);
+      res.redirect("back");
+   }
+});
+
 router.get("/All-Classes-Past-Year-Papers", async function (req, res) {
    const user = req.user;
 
@@ -219,6 +202,5 @@ router.get("/quotes/generate", (req, res) => {
       data: Quotes[randQuote],
    });
 });
-//------------------------------------------
 
 export default router;
